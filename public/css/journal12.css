@@ -1,0 +1,483 @@
+
+
+
+.navbar{margin-bottom:0;}
+section{width:100%; float:left;}
+.banner-section{background-image:url("");
+ 
+   background-size:cover; height: ; width:50%;left: 20%; position: fixed; top:0 ; background-position:0;}
+.post-title-block{padding:100px 0;}
+.post-title-block h1 {color: rgb(231, 60, 60); font-size: 85px; font-weight: bold; text-transform: capitalize;}
+.post-title-block li{font-size:20px; color: rgb(201, 19, 19);}
+.image-block{float:left; width:100%; margin-bottom:10px;}
+.footer-link{float:left; width:100%; background:#222222; text-align:center; padding:30px;}
+.footer-link a{color:#A9FD00; font-size:18px; text-transform:uppercase;}
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    
+      /* Optional: Makes the sample page fill the window. */
+     
+        body{
+              width: ;
+              height:auto ;
+              margin: 0;
+              padding: 0;
+              overflow: ;
+
+      }
+      
+
+     #container_banner{
+      
+     }
+
+
+
+#container_menu_header{
+                      display: flex;
+                      width: 100%;
+                      height: ;
+                      font-family: fangsong;
+
+                    
+                      
+  }
+  
+  #containerJournal{
+
+
+  }
+  #container_content{
+
+                    display: flex;
+                    flex-direction: ;
+                    position: ;
+                    width:100%;
+                    height:auto;
+                      background-color: rgb(255, 255, 255);
+                      font-family: fangsong;
+
+
+                    
+
+  }
+  #container{
+
+               display: flex;
+              flex-direction: column;
+              width:60%;
+              height: auto;
+              position:relative;
+              overflow:;
+              border: ;
+              margin-left:20% ;
+              margin-top:80px ;
+              font-family: fangsong;
+              font-size: 15px;
+
+
+              
+              
+  }
+  #container_menu{
+  
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+                  width:20%;
+                  height:700px ;
+                  border:;
+                  background-color: #130735;
+                  position: fixed;
+                  margin-right: ;
+                  overflow:;
+                  margin-left: ;
+                  margin-top: 80px;
+                  border: solid black 1px;
+                  font-family:fangsong;
+                  font-size: 15px;
+
+                 
+
+  }
+
+  #box_categorie{
+                    font-size: small;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    text-align: center;
+                    background-color: rgb(239, 244, 248);
+                    width: 100%;
+                    height: 100%;
+                    font-family: fangsong;
+                    font-size: 20px;
+
+  
+  }
+
+  #p_catégorie{
+    color:blue;
+  }
+  
+  #container_right{
+                  display: flex;
+                  flex-direction: column;
+                  background-color:rgb(255, 255, 255);
+                  text-align: center;
+                  width: 20%;
+                  height: 700px;
+                  color:rgb(218, 161, 56);
+                  font-weight:bold;
+                  position: fixed ;
+                  margin-left: 80%;
+                  margin-top: 80px;
+                  border: solid black 1px;
+                  font-family: fangsong;
+
+
+                 
+  }
+
+  #img_container_right{
+                      width: 100%;
+                      height: auto;
+   
+  }
+
+
+
+#date{
+        color:rgb(0, 0, 0);
+        font-size: 20px;
+        font-family: fangsong;
+
+}
+
+
+
+
+
+#container_journal{
+                      /*display: flex;
+                      flex-direction: column;*/
+                      width: ;
+    
+                      height:;
+                      border:solid rgb(170, 165, 165) 1px;   
+                     background: white;
+                      font-family: fangsong;
+                      font-size: 15px;
+
+
+}
+
+
+
+
+
+#container_content_journal{
+  
+                          display: flex;
+                          flex-direction: start;
+                          background-color: #ffffff;
+                          width:100% ;
+                          height: ;
+
+
+
+}
+
+
+#container_resume_journal{
+                         display: flex;
+                         flex-direction: column;
+                       
+                         width: 100%;
+                          height:100%;
+                          font-size: 20px;
+                          font-family: fangsong;
+
+
+                          
+}
+
+#container_titre_et_btn_link{
+  
+                            display: flex;
+                            flex-direction: start;
+                            width: 100%;
+                            height: auto;
+                            font-family: fangsong;
+                            background-color: BLUE;
+
+                           
+   
+}
+
+#container_titre_post{
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      height: auto;
+                      font-weight:bold;
+                      font-size: ;
+                      text-align: center;
+                      justify-content: center;
+                      font-family: fangsong;
+                      background-color: rgb(255, 255, 255);
+
+
+}
+
+
+#img_container_journal{
+                        
+                        width: 30%;
+                        height: auto;
+                        border:;
+                        text-align: center;
+                        justify-content: center;
+                        background-color: white;
+
+}
+
+#img_journal{
+  text-align: center;
+                padding: 2px;
+                width:80px;
+                height:50PX;
+                border-radius:4px;
+                border: solid rgb(30, 67, 230) 1px;
+                border-radius: 50%;
+}
+
+#link_journal{
+                    display: flex;
+                    flex-direction: column;
+                    width: auto;
+                    color: rgb(0, 0, 0);
+                    font:bold;
+                    font-size: 20px;
+                    height:100%;
+                    width: 30%;
+                    background-color: white;
+
+
+}
+
+#titre_categorie{
+  justify-content: center;
+  text-align: center;
+                  padding: 10px;
+                  background:#000000;
+                 width:30% ;
+                  color: rgb(255, 255, 255);
+                   font-size: 70%;
+  
+   
+}
+
+
+
+#titre_journal{
+                font-weight:bold;
+                width:100% ;
+                height: auto;
+                font-size: 45px;
+                font-family: fangsong;
+
+}
+#lien_titre_journal{
+                    width: ;
+                    font-weight:bold;
+                    font-size: 50px;
+                    font-family: fangsong;
+
+}
+
+
+
+#container_resume{
+                  display: flex;
+                  flex-direction: column;
+                  background-color: #ffffff;
+                  height: auto;
+                  justify-content: center;
+                  text-align: center;
+                  font-family: fangsong;
+                  font-size: 25PX;
+  
+
+}
+
+#container_suivre{
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  margin-right: 5%;
+}
+
+#btn_suivre{
+  width: 50%;
+  font-size: 20px;
+  color: blue;
+  background-color: white;
+}
+
+
+
+
+#container_titre_article{
+  display: flex;
+}
+#container_nbr_vue{
+
+                    display: flex;
+                    flex-direction: row-reverse;
+                    text-align: center;
+                    height: auto;
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 22px;
+                    color:rgb(70, 34, 5);
+}
+
+#container_video{
+  width: 100%;
+  height: auto;
+  background:#ffffff;
+
+
+}
+#container_btn_like{
+
+  display: flex;
+  text-align: center;
+}
+
+#container_footer{
+  background-color: rgb(239, 244, 248);
+  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  text-align: center;
+                  width: 100%;
+                  height: auto;
+                  font-family: fangsong;
+                  font-size: 20px;
+
+}
+.fb-root{
+                  width: ;
+                  height:;
+}
+
+
+
+#by{
+       color:blue;
+       font-size: 20px;
+}
+iframe{
+        width:100% ;
+        height: 400px;
+        
+}
+
+#video_journal{
+                border: ;
+
+                display: flex;
+                flex-direction:;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+}
+
+#btn_post_link{
+  color:blue;
+}
+
+
+#show
+{
+  background: black;
+  color:white;
+  text-align: center;
+} 
+#hide {
+  background: black;
+  color:white;
+  text-align: center;
+}
+#btn_categorie{
+  background-color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
+}
+#btn_categorie:hover{
+  background:rgb(105, 48, 236);
+  color:white;
+}
+
+#espace{
+  width: 100%;
+  height: 40px;
+
+}
+
+
+#location{
+  font-size: 20px;
+  font-weight: ;
+  color: rgb(8, 91, 99);
+}
+#location_departement{
+  font-size: 20px;
+  font-weight: ;
+  color: rgb(8, 91, 99);
+
+  
+
+}
+
+#location_region{
+  font-size: 20px;
+  font-weight: ;
+  color: rgb(8, 91, 99);
+
+
+}
+#location_pays{
+  font-size: 20px;
+  font-weight: ;
+  color: rgb(8, 91, 99);
+
+
+}
+#location_continent{
+  font-weight:;
+  font-size: 20px;
+  color: rgb(8, 91, 99);
+
+}
+#date_article{
+  font-size: 20px;
+  font-weight: ;
+}
+
+#input{
+  box-sizing: border-box;
+  width: 200PX;
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+#p_economie{
+  color:white;
+}
