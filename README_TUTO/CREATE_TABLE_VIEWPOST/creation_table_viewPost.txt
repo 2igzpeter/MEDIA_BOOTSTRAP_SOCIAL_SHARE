@@ -1,0 +1,17 @@
+
+
+CREATE TABLE viewpost (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    titre_article VARCHAR(100) NULL,
+    url_post VARCHAR(1000) NULL,
+    url_img VARCHAR(10000) NULL,
+    url_video VARCHAR(1000) NULL,
+    date_sortie VARCHAR(1000) NULL,
+    description_article VARCHAR(1000) NULL,
+    name_chaine VARCHAR(1000) NULL,
+    pays VARCHAR(1000) NULL,
+    categorie VARCHAR (50) NULL,
+    name_reporter VARCHAR (50) NULL,
+    PRIMARY KEY (id)
+)
+ENGINE=INNODB;
