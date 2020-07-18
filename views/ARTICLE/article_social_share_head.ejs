@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- SOCIAL SHARE BAR -->
+    <meta property="og:description" name="description" content="Floating Social Share Buttons">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/d/d6/Hs-2009-25-e-full_jpg.jpg">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Article</title>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.floating-social-share.min.css" />
+
+
+
+
+       <!-- JQUERRY -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+       <script type="text/javascript"  src="js/jquery.js"></script>
+       <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        <!--LIEN DE BASE MDB-->
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+        <!--LIEN DE BASE MDB-->
+
+
+
+       <!-- SOCIAL SHARE BAR -->
+       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+       <!-- Custom styles for this template POST -->
+       <link type="text/html" href="css/blog-home.css" rel="stylesheet">
+       <link href="css/post.css" rel="stylesheet">
+
+     
+      <script>jQuery(document).ready(function() {
+        // Ici, le DOM est entièrement défini
+      });
+      </script>
+
+
+
+
+
+
+
+
+
+    <style>
+
+        html,
+        body,
+        header,
+        .view {
+          height: 100%;
+          
+        }
+      
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 1000px;
+          }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 650px;
+          }
+        }
+      
+        .top-nav-collapse {
+          background-color: #3f51b5 !important;
+        }
+      
+        .navbar:not(.top-nav-collapse) {
+          background: transparent !important;
+        }
+      
+        @media (max-width: 991px) {
+        .navbar:not(.top-nav-collapse) {
+          background: #3f51b5 !important;
+        }
+        }
+        
+        .rgba-gradient {
+          background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+        }
+      
+        .card {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      
+        .md-form label {
+          color: #ffffff;
+        }
+      
+        h6 {
+          line-height: 1.7;
+        }
+
+
+
+
+
+        /*social btn link*/
+        .fa {
+              padding: 20px;
+              font-size: 30px;
+              width: 70px;
+              text-align: center;
+              text-decoration: none;
+              margin: 5px 2px;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-facebook {
+              background: #3B5998;
+              color: white;
+            }
+
+            .fa-twitter {
+              background: #55ACEE;
+              color: white;
+            }
+
+            .fa-google {
+              background: #dd4b39;
+              color: white;
+            }
+
+            .fa-linkedin {
+              background: #007bb5;
+              color: white;
+            }
+
+            .fa-youtube {
+              background: #bb0000;
+              color: white;
+            }
+
+            .fa-instagram {
+              background: #125688;
+              color: white;
+            }
+
+            .fa-pinterest {
+              background: #cb2027;
+              color: white;
+            }
+
+            .fa-snapchat-ghost {
+              background: #fffc00;
+              color: white;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+
+            .fa-skype {
+              background: #00aff0;
+              color: white;
+            }
+
+            .fa-android {
+              background: #a4c639;
+              color: white;
+            }
+
+            .fa-dribbble {
+              background: #ea4c89;
+              color: white;
+            }
+
+            .fa-vimeo {
+              background: #45bbff;
+              color: white;
+            }
+
+            .fa-tumblr {
+              background: #2c4762;
+              color: white;
+            }
+
+            .fa-vine {
+              background: #00b489;
+              color: white;
+            }
+
+            .fa-foursquare {
+              background: #45bbff;
+              color: white;
+            }
+
+            .fa-stumbleupon {
+              background: #eb4924;
+              color: white;
+            }
+
+            .fa-flickr {
+              background: #f40083;
+              color: white;
+            }
+
+            .fa-yahoo {
+              background: #430297;
+              color: white;
+            }
+
+            .fa-soundcloud {
+              background: #ff5500;
+              color: white;
+            }
+
+            .fa-reddit {
+              background: #ff5700;
+              color: white;
+            }
+
+            .fa-rss {
+              background: #ff6600;
+              color: white;
+            }
+      
+      </style>
+  
+  <!-- Main navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <strong>MDB</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/journal12">Journal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/build_post">Build post</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Log out</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Bienvenue: nom@email.com</a>
+        </li>
+      </ul>
+
+    </nav>
+    <!-- Navbar -->
+
+
+
+
+    <!-- Full Page Intro -->
+    <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+       
+
+
+        
+      </div>
+      <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+  </header>
+  <!-- Main navigation -->
+
+
+
+
+
+
+
+
+
+
+  <!--Main layout-->
+<main>
+    
+
+    <!-- Page Content -->
+    <div class="" style="padding: 50px;">
+
+      <div class="row">
+
+
+
+
+        
+        <!-- Blog Entries Column -->
+        <div class="col-lg-8 col-md-6 col-lg-6">
+
+
+        </br>
+          <div class="">
+ 
+
+            <!--Section: Content-->
+            <section class=" dark-grey-text bg-light">
+        
+             
+
+                
+                <!--Grid column-->
+                <div class="col-lg-12">
+                     <!-- Title -->
+                     <h1 class="mt-4"><i class="fas fa-quote-left pr-2"></i><%= titre %> <i class="fas fa-quote-right pr-2"></i></h1>
+                    <!-- Author -->
+                    
+                 
+                </div>
+                <!--Grid column-->
+         <!--Grid row-->
+         <div class="row">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-1">
+                    <img src="images/icon_anonymous.png" style="width: 50px; height: 50px;" class="rounded-circle z-depth-1 img-fluid">
+                  </div>
+                  <div class="col-sm-9">
+                        <!--Content-->
+                        <p class="lead">
+                          by
+                          <a href="/profile"><%= socity %></a>
+                        </p>       
+                 </div>
+                  <div class="col-sm">
+                    One of three columns
+                  </div>
+                </div>
+              </div>
+          </div>
+          <!--Grid row-->
+            </section>
+            <!--Section: Content-->
+        
+        
+          </div>
+
+
+
+
+          
+                                                                  
+             
+
+
+          
+          <hr>
+          <div class="container-fluid bg-light">
+            <div class="row">
+              <div class="col-sm-5">
+                <cite title="Source Title" class="blockquote-footer">Posté le: <%= date %></cite>
+              </div>
+              <div class="col-sm">
+                
+                <cite title="Source Title" class="blockquote-footer">                  
+                  Report by: <a href="blockquote-footer"><%= reporter %></a></cite>
+                  
+              </div>
+              <div class="col-sm">
+                <cite title="Source Title" class="blockquote-footer"> Catégorie: <a href="/journal12"><%= categorie %></a></cite>
+                
+              </div>
+              <div class="col-sm">
+                <cite title="Source Title" class="blockquote-footer">Vues: 987654</cite>
+              </div>
+            </div>
+          </div>
+          <!-- Date/Time -->
+          <hr>
+
+          <!-- Preview Image -->
+          <div id="container_iframe">
+            <iframe width="900" height="506" src="https://www.youtube.com/embed/iknsdj34LIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+          </div>
+    
+          <hr>
+          
+          <!-- Post Content -->
+            <p class="mb-0"><%= resume %></p></br>
+            <div class="container-fluid">
+              <div class="row">
+                
+                
+                <div class="col-sm-1">
+                  <img src="images/anonymous_mask.png" style="width: 50px; height: 50px;" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-sm-1">
+                  <cite title="Source Title" class="blockquote-footer">Report by:<a href="/profile"><%= reporter %></a>  </cite>
+                </div>
+                <div class="col-sm">
+                  <cite title="Source Title" class="blockquote-footer">TV chain:<a href="/profile"><%= socity %></a>  </cite>
+                </div>
+                <div class="col-sm">
+                  <cite title="Source Title" class="blockquote-footer">Posted: <%=date %></cite>
+                  
+                </div>
+               
+                
+              </div>
+            </div>
+        
+
+          <blockquote class="blockquote">
+            <hr>
+            <footer class="bg-light ">
+              <div class="container-fluid">
+                <div class="row">
+                  
+                  
+                  <div class="col-sm">
+                    <cite title="Source Title" class="blockquote-footer">continent:<a href="/journal12"><%= continent %></a></cite>
+                  </div>
+                  <div class="col-sm">
+                    <cite title="Source Title" class="blockquote-footer">pays:<a href="/journal12"><%= pays %></a></cite>
+                  </div>
+                  <div class="col-sm">
+                    <cite title="Source Title" class="blockquote-footer">région:<a href="/journal12"><%= region %></a></cite>
+                  </div>
+                  <div class="col-sm">
+                    <cite title="Source Title" class="blockquote-footer">département: <a href="/journal12"><%= departement %></a></cite>
+                    
+                  </div>
+                  <div class="col-sm">
+                    <cite title="Source Title" class="blockquote-footer">ville:<a href="/journal12"><%= ville %></a></cite>
+                  </div>
+                  
+                </div>
+              </div>
+            </footer>
+          </blockquote>
+
+
+          <hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
+
+          <!-- Comment with nested comments -->
+          <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+              <div class="media mt-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                  <h5 class="mt-0">Commenter Name</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+        </br>
+
+          <!-- Categories Widget -->
+          <div class="card my-3">
+            <h5 class="card-header">Voir les autres posts de: <a href="/profile"> <%= socity %></a></h5>
+            <div class="card-body" style="min-height: 300px; max-height: 400px; height: 100%; overflow: scroll;">
+              <div class="row" >
+                
+                      <div class="container-fluid">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col col-sm-12" >
+                                            <div id="container" class="container-fluid"></div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+
+               
+               
+              </div>
+            </div>
+          </div>
+           
+           
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Mes réseaux sociaux</h5>
+            <div class="card-body">
+                            
+              <!-- Add font awesome icons -->
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-google"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-youtube"></a>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-pinterest"></a>
+              <a href="#" class="fa fa-snapchat-ghost"></a>
+
+              
+
+            </div>
+          </div>
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">banner</h5>
+            <div class="card-body">
+             <div id="container_user_posts_img" style="width: ;">
+
+             </div> 
+             
+            </div>
+          </div>
+          <!-- tweeter -->
+          <div class="card my-4">
+            <h5 class="card-header">Tweeter here</h5>
+            <div class="card-body">
+                          
+              <a class="twitter-timeline" href="https://twitter.com/Luckmoshy?ref_src=twsrc%5Etfw">Tweets by Luckmoshy</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+              <a href="https://twitter.com/Luckmoshy?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @Luckmoshy</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!--footer-->
+<footer class="kilimanjaro_area">
+        <!-- Top Footer Area Start -->
+        <div class="foo_top_header_one section_padding_100_70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kilimanjaro_part">
+                            <h5>About Us</h5>
+                            <p>It includes rich features & contents. It's designed & developed based on One Page/ Multi-page Layout,blog themes,world press themes and blogspot. You can use any layout from any demo anywhere.</p>
+                            <p>webblogoverflow is completely creative, clean & 100% responsive website. Put your business into next level with Webublogoverflow.</p>
+                        </div>
+                        <div class="kilimanjaro_part m-top-15">
+                            <h5>Social Links</h5>
+                            <ul class="kilimanjaro_social_links">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kilimanjaro_part">
+                            <h5>Tags Widget</h5>
+                            <ul class=" kilimanjaro_widget">
+                                <li><a href="#">Classy</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">One Page</a></li>
+                                <li><a href="#">Multipurpose</a></li>
+                                <li><a href="#">Minimal</a></li>
+                                <li><a href="#">Classic</a></li>
+                                <li><a href="#">Medical</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="kilimanjaro_part m-top-15">
+                            <h5>Important Links</h5>
+                            <ul class="kilimanjaro_links">
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms & Conditions</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About Licences</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Help & Support</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Careers</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Community & Forum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kilimanjaro_part">
+                            <h5>Latest News</h5>
+                            <div class="kilimanjaro_blog_area">
+                                <div class="kilimanjaro_thumb">
+								<img class="img-fluid" src="https://3.bp.blogspot.com/--C1wpaf_S4M/W7V__10nRoI/AAAAAAAAK24/1NSfapuYSIY0f0wzXY9NgoH0FjQLT07YACKgBGAs/s1600/maxresdefault.jpg" alt="">
+
+                                </div>
+                                <a href="#">Your Blog Title Goes Here</a>
+                                <p class="kilimanjaro_date">21 Jan 2018</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur</p>
+                            </div>
+                            <div class="kilimanjaro_blog_area">
+                                <div class="kilimanjaro_thumb">
+								<img class="img-fluid" src="https://3.bp.blogspot.com/--C1wpaf_S4M/W7V__10nRoI/AAAAAAAAK24/1NSfapuYSIY0f0wzXY9NgoH0FjQLT07YACKgBGAs/s1600/maxresdefault.jpg" alt="">
+                                </div>
+                                <a href="#">Your Blog Title Goes Here</a>
+                                <p class="kilimanjaro_date">21 Jan 2018</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur</p>
+                            </div>
+                            <div class="kilimanjaro_blog_area">
+                                <div class="kilimanjaro_thumb">
+								<img class="img-fluid" src="https://3.bp.blogspot.com/--C1wpaf_S4M/W7V__10nRoI/AAAAAAAAK24/1NSfapuYSIY0f0wzXY9NgoH0FjQLT07YACKgBGAs/s1600/maxresdefault.jpg" alt="">
+                                </div>
+                                <a href="#">Your Blog Title Goes Here</a>
+                                <p class="kilimanjaro_date">21 Jan 2018</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="kilimanjaro_part">
+                            <h5>Quick Contact</h5>
+                            <div class="kilimanjaro_single_contact_info">
+                                <h5>Phone:</h5>
+                                <p>+255 789 54 50 40 <br> +2255 766 90 94 00</p>
+                            </div>
+                            <div class="kilimanjaro_single_contact_info">
+                                <h5>Email:</h5>
+                                <p>support@webblogoverflow.com <br> luckmoshy@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom Area Start -->
+        <div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>© All Rights Reserved by <a href="#">Webublogoverflow.blogspot -(with all love)<i class="fa fa-love"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>	
+
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer>
+
+</footer>
+<!--Footer-->
+
+
+
+      <div class="col-lg-6 px-3 mb-3 d-flex align-item-stretch">
+        <div class="card">
+          <div class="card-body m-1">
+            <div class="row mb-4">
+              <div class="col-lg-4 d-flex mb-2 align-items-center">
+                <div
+                  class="avatar w-100 white d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg"
+                    class="img-fluid z-depth-1"
+                    alt="woman avatar"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-lg-8 text-muted d-flex flex-column justify-content-end pt-2"
+              >
+                <p class="mb-1"><strong>Anna Smith</strong></p>
+                <p class="mb-1"><i>Product Manager</i></p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+<!--afficher ALL-->
+<script>
+
+  function tous(){
+            document.getElementById("container").innerHTML = "";
+  
+  //LE TABLEAU JS EST PASSé DANS UNE FONCTION
+  function afficherTous(tableauDeFilms) {
+      tableauDeFilms.forEach(function (viewPost) {
+  
+  
+          
+          /*SECTION
+          var balise_div_section = document.createElement('section');
+          balise_div_section.setAttribute('class',' text-center ');
+          container.appendChild(balise_div_section);*/
+
+               //CONTAINER VIEW POST
+              var container_view_post= document.createElement('div');
+              container_view_post.setAttribute('class', 'row');
+              container_view_post.setAttribute('id', 'container_view_post');
+              container.appendChild(container_view_post);
+
+
+
+          //DIV 
+          var div_col_lg_6 = document.createElement('div');
+          div_col_lg_6.setAttribute('class', ' col-md-12 col-lg-12 col-sm-12  align-item-stretch');
+          container_view_post.appendChild(div_col_lg_6);
+
+          var div_class_card = document.createElement('div');
+          div_class_card.setAttribute('class', 'card');
+          div_col_lg_6.appendChild(div_class_card);
+
+          var div_card_body_m1 = document.createElement('div');
+          div_card_body_m1.setAttribute('class', 'card-body ');
+          div_class_card.appendChild(div_card_body_m1);
+
+          var div_row_mb_4 = document.createElement('div');
+          div_row_mb_4.setAttribute('class', 'row ');
+          div_card_body_m1.appendChild(div_row_mb_4);
+
+          var div_col_lg_4 = document.createElement('div');
+          div_col_lg_4.setAttribute('class', 'col-sm-12 col-lg-12 col-md-12   align-items-center');
+          div_row_mb_4.appendChild(div_col_lg_4);
+
+          var div_avatar = document.createElement('div');
+          div_avatar.setAttribute('class','avatar w-100 white d-flex justify-content-center align-items-center');
+          div_col_lg_4.appendChild(div_avatar);
+
+          var img_avatar = document.createElement('img');
+          img_avatar.setAttribute('class', 'img-fluid z-depth-1');
+          img_avatar.setAttribute('src', viewPost.url_img);
+          div_avatar.appendChild(img_avatar);
+
+          var div_col_lg_8 = document.createElement('div');
+          div_col_lg_8.setAttribute('class', 'col-md-12 col-sm-12 col-lg-12 text-muted d-flex flex-column justify-content-end pt-2');
+          div_row_mb_4.appendChild(div_col_lg_8);
+          
+
+            var p_mb_1_1 = document.createElement('p');
+            p_mb_1_1.setAttribute('class', 'mb-1');
+            div_col_lg_8.appendChild(p_mb_1_1);
+
+            var p_mb_1_2 = document.createElement('p');
+            p_mb_1_2.setAttribute('class', 'mb-1');
+            div_col_lg_8.appendChild(p_mb_1_2);
+
+
+            var balise_strong_into_p_mb_1_1 = document.createElement('strong');
+            p_mb_1_1.appendChild(balise_strong_into_p_mb_1_1);
+
+            var txt_balise_strong = document.createTextNode('salut');
+            balise_strong_into_p_mb_1_1.appendChild(txt_balise_strong);
+
+            var i_into_p_mb_1_2  = document.createElement('i');
+            p_mb_1_2.appendChild(i_into_p_mb_1_2);
+            var txt_balise_i_into_p_mb_1_2 = document.createTextNode('ligne 2'); 
+            i_into_p_mb_1_2.appendChild(txt_balise_i_into_p_mb_1_2);
+
+            var balise_hr = document.createElement('hr');
+            div_card_body_m1.appendChild(balise_hr);
+
+            var balise_row_into_div_card_body_m1 = document.createElement('div');
+            balise_row_into_div_card_body_m1.setAttribute('class','row');
+            div_card_body_m1.appendChild(balise_row_into_div_card_body_m1);
+
+            var balise_p_into_balise_row_into_div_card_body_m1 = document.createElement('p');
+            balise_p_into_balise_row_into_div_card_body_m1.setAttribute('class','text-muted card-text mt-2 px-4 mb-2');
+            balise_row_into_div_card_body_m1.appendChild(balise_p_into_balise_row_into_div_card_body_m1);
+
+
+            var txt_into_balise_p_into_balise_row_into_div_card_body_m1 = document.createTextNode('description article');
+            balise_p_into_balise_row_into_div_card_body_m1.appendChild(txt_into_balise_p_into_balise_row_into_div_card_body_m1);
+
+
+            
+
+          var balise_br_into_row = document.createElement('br');
+          div_col_lg_6.appendChild(balise_br_into_row);
+
+
+
+  
+           
+  
+
+
+
+
+
+
+
+
+
+
+
+         
+  
+  
+      })};
+  
+      
+      
+      $.get("http://localhost:8080/total_user_posts", function (response, error) {
+         
+          console.log(error);
+          console.log(response);
+       afficherTous(response);
+  });
+  }
+  
+    tous();
+  
+  
+  </script>
+  
+	
+
+<!--afficher ALL-->
+<script>
+
+  function user_post_img(){
+            document.getElementById("container_user_posts_img").innerHTML = "";
+  
+  //LE TABLEAU JS EST PASSé DANS UNE FONCTION
+  function afficherTous(tableauDeFilms) {
+      tableauDeFilms.forEach(function (viewPost) {
+  
+  
+          //CONTAINER IMG_JOURNAL
+          var container_img_journal=document.createElement('div');
+          container_img_journal.setAttribute('id', 'img_container_journal');
+          container_img_journal.setAttribute('style', 'width:100%');
+          container_user_posts_img.appendChild(container_img_journal);
+  
+    
+          //JE CREE DES IMG 
+          var journalImage = document.createElement('img');
+          journalImage.setAttribute('id', 'img_journal');
+          journalImage.setAttribute('class', 'img-fluid');
+          journalImage.setAttribute('src', viewPost.url_img);
+          container_img_journal.appendChild(journalImage);
+
+  
+      })};
+  
+      
+      
+      $.get("http://localhost:8080/total_user_posts_img", function (response, error) {
+         
+          console.log(error);
+          console.log(response);
+       afficherTous(response);
+  });
+  }
+  
+    user_post_img();
+  
+  
+  </script>
+        
+
+
+
+<!--LIEN DE BASE MDB-->
+
+   <!-- JQuery -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Bootstrap tooltips -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <!-- MDB core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<!--LIEN DE BASE MDB-->
+
+
+
+<!--JQUERRY SOCIAL SHARE-->
+
+   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+   <script type="text/javascript" src="js/jquery.floating-social-share.min.js"></script>
+   <script>
+     $("body").floatingSocialShare({
+       buttons: [
+         "facebook", "linkedin", "pinterest", "reddit", 
+         "telegram", "tumblr", "twitter", "viber", "vk", "whatsapp"
+       ],
+       text: "share with: ",
+       url: "https://github.com/ozdemirburak/jquery-floating-social-share"
+     });
+   </script>
+<!--JQUERRY SOCIAL SHARE-->
+
+
+
+
+
+
+
+
+</body>
+</html>

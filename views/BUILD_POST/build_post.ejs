@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Builder post</title>
+
+<!--STEPPER-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+
+
+
+ <style>
+
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+  
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+  
+    .top-nav-collapse {
+      background-color: #3f51b5 !important;
+    }
+  
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+  
+    @media (max-width: 991px) {
+     .navbar:not(.top-nav-collapse) {
+      background: #3f51b5 !important;
+     }
+    }
+    
+    .rgba-gradient {
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+    }
+  
+    .card {
+      background-color: rgba(126, 123, 215, 0.2);
+    }
+  
+    .md-form label {
+      color: #ffffff;
+    }
+  
+    h6 {
+      line-height: 1.7;
+    }
+
+    /*STEPPER*/
+   
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+  
+  </style>
+  
+  <!-- Main navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <strong>MDB</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/journal12">Journal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/build_post">Build post</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Log out</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> Welcome: <%= user.username %></a>
+        </li>
+      </ul>
+
+    </nav>
+    <!-- Navbar -->
+
+
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- Full Page Intro -->
+    <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+            
+                  <!-- Mask & flexbox options-->
+            <div class="mask">
+              <!-- Content -->
+              <div class="container h-100">
+                <!--Grid row-->
+                <div class="row align-items-center h-100">
+                  <!--Grid column-->
+                  <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <h1 class="white-text mb-4">Better Website Design, More Conversion</h1>
+                    <p class="mb-4 pb-2 white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, culpa qui officia deserunt labor debitis.</p>
+                      <button type="button" class="btn btn-outline-white btn-md ml-md-0" data-toggle="modal" data-target="#modalLRForm">Get started</button>
+                      <button type="button" class="btn btn-white btn-md">Information</button>
+                  </div>
+                  <!--Grid column-->
+              
+                  <!--Grid column-->
+                  <div class="col-md-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/cards2.png" alt="" class="img-fluid">
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </div>
+              <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+      </div>
+      <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+ 
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--Modal: Login / Register Form-->
+    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                
+        
+                                                                  
+                                                                          
+                                                  
+                                                  
+                                                                              
+                      <form id="regForm" action="/result" method="POST">
+                        <!-- One "tab" for each step in the form: -->
+                        <div class="tab " >
+                          A propos de toi:
+                          <div class="md-form">
+                            <i class="fa fa-user prefix active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_socity">
+                            <label for="form3" class="active">Nom de la société</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_reporter">
+                            <label for="form3" class="active"> Nom du reporter</label>
+                          </div>
+                        </div>
+
+                        <div class="tab " >
+                          Post:
+                          <div class="md-form">
+                            <i class="fa fa-user prefix active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_categorie">
+                            <label for="form3" class="active">Catégorie</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_titre">
+                            <label for="form3" class="active"> Titre du post</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_resume">
+                            <label for="form3" class="active"> Résumé</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_presentation">
+                            <label for="form3" class="active"> Paragraphe</label>
+                          </div>
+                        </div>
+
+                        <div class="tab " >
+                          Média:
+                          <div class="md-form">
+                            <i class="fa fa-user prefix active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_video">
+                            <label for="form3" class="active">Vidéo</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_image">
+                            <label for="form3" class="active">Image</label>
+                          </div>
+                        </div>
+
+                        <div class="tab " >
+                          Location:
+                          <div class="md-form">
+                            <i class="fa fa-user prefix active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_continent">
+                            <label for="form3" class="active">Continent</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_pays">
+                            <label for="form3" class="active"> Pays</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_region">
+                            <label for="form3" class="active"> Région</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_departement">
+                            <label for="form3" class="active"> Département</label>
+                          </div>
+                          <div class="md-form">
+                            <i class="fa fa-user prefix  active"></i>
+                            <input type="text" id="form3" class="white-text form-control" oninput="this.className = ''" name="post_ville">
+                            <label for="form3" class="active"> Ville</label>
+                          </div>
+                        </div>
+
+
+                        <div style="overflow:auto;">
+                          <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                          </div>
+                        </div>
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div style="text-align:center;margin-top:40px;">
+                          <span class="step"></span>
+                          <span class="step"></span>
+                          <span class="step"></span>
+                          <span class="step"></span>
+                        </div>
+                      </form>
+
+                      <script>
+                      var currentTab = 0; // Current tab is set to be the first tab (0)
+                      showTab(currentTab); // Display the current tab
+
+                      function showTab(n) {
+                        // This function will display the specified tab of the form...
+                        var x = document.getElementsByClassName("tab");
+                        x[n].style.display = "block";
+                        //... and fix the Previous/Next buttons:
+                        if (n == 0) {
+                          document.getElementById("prevBtn").style.display = "none";
+                        } else {
+                          document.getElementById("prevBtn").style.display = "inline";
+                        }
+                        if (n == (x.length - 1)) {
+                          document.getElementById("nextBtn").innerHTML = "Submit";
+                        } else {
+                          document.getElementById("nextBtn").innerHTML = "Next";
+                        }
+                        //... and run a function that will display the correct step indicator:
+                        fixStepIndicator(n)
+                      }
+
+                      function nextPrev(n) {
+                        // This function will figure out which tab to display
+                        var x = document.getElementsByClassName("tab");
+                        // Exit the function if any field in the current tab is invalid:
+                        if (n == 1 && !validateForm()) return false;
+                        // Hide the current tab:
+                        x[currentTab].style.display = "none";
+                        // Increase or decrease the current tab by 1:
+                        currentTab = currentTab + n;
+                        // if you have reached the end of the form...
+                        if (currentTab >= x.length) {
+                          // ... the form gets submitted:
+                          document.getElementById("regForm").submit();
+                          return false;
+                        }
+                        // Otherwise, display the correct tab:
+                        showTab(currentTab);
+                      }
+
+                      function validateForm() {
+                        // This function deals with validation of the form fields
+                        var x, y, i, valid = true;
+                        x = document.getElementsByClassName("tab");
+                        y = x[currentTab].getElementsByTagName("input");
+                        // A loop that checks every input field in the current tab:
+                        for (i = 0; i < y.length; i++) {
+                          // If a field is empty...
+                          if (y[i].value == "") {
+                            // add an "invalid" class to the field:
+                            y[i].className += " invalid";
+                            // and set the current valid status to false
+                            valid = false;
+                          }
+                        }
+                        // If the valid status is true, mark the step as finished and valid:
+                        if (valid) {
+                          document.getElementsByClassName("step")[currentTab].className += " finish";
+                        }
+                        return valid; // return the valid status
+                      }
+
+                      function fixStepIndicator(n) {
+                        // This function removes the "active" class of all steps...
+                        var i, x = document.getElementsByClassName("step");
+                        for (i = 0; i < x.length; i++) {
+                          x[i].className = x[i].className.replace(" active", "");
+                        }
+                        //... and adds the "active" class on the current step:
+                        x[n].className += " active";
+                      }
+                      </script>                  
+                                                                                      
+                
+        
+                
+
+            </div>
+        <!--/.Content-->
+        </div>
+   </div>
+   <!--Modal: Login / Register Form-->
+  
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+<script></script>
+<!--JS PAGE MDB-->
+<script>new WOW().init();</script>
+
+
+
+
+  
+
+
+   <!-- JQuery -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Bootstrap tooltips -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <!-- MDB core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+
+
+</body>
+</html>

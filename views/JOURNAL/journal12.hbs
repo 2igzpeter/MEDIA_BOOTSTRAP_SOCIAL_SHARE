@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+          <title>Social news: journal</title>
+    	    <link rel="stylesheet" href="css/journal12.css"/>
+          <!-- lien bootstrap menu navbar -->
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+          <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+          <!-- menu categorie filtre -->
+          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+          <!--btn like-->
+          <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+          <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        width:100%;
+        height:100% ;
+        display:flex ;
+        position:relative;
+      }
+
+    html{
+      overflow: scroll;
+              background-color: #ffffff;
+
+
+    }
+      /* Optional: Makes the sample page fill the window. */
+    
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+        
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+        
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+        
+      }
+
+      #pac-input:focus {
+        border-color: #000000;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #fe4d4d;
+        font-size: 35px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+      
+  #container_banner{
+  
+
+  }
+
+
+  /*btn like*/
+  .example { margin:20px auto;}
+
+#like{
+    background: rgb(91, 6, 230);
+    color:white;
+    font-size: 20px;
+}
+      
+
+#snackbar {
+visibility: hidden;
+  width: 100%;
+  min-width:;
+  margin-left: ;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: ;
+  bottom: 30px;
+  font-size: 30px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+#btn_2{
+    background-color: #6cecc6;
+}
+#color_name{
+  color:green;
+  font-weight: bold;
+}
+#color_p{
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+#snackbar_filter {
+  visibility: hidden;
+  width: 100%;
+  min-width: 250px;
+  margin-left: ;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: ;
+  bottom: 30px;
+  font-size: 30px;
+}
+
+#snackbar_filter.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+    </style>
+  </head>
+  <body>
+    <div id="container_menu_header">
+    
+ <!-- Static navbar -->
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+     
+      <div class="container">
+        
+        <div class="navbar-header">
+         
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            
+          </button>
+         
+    
+
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+       
+          <ul class="nav navbar-nav">
+   
+          
+      <!--btn categorie filter -->
+     <!--  <li><button id="show">SHOW/HIDE CATEGORIE</button>
+</li>-->
+<!--btn map show
+   <li><button  id="hide">SHOW/HIDE Map</button> 
+
+</li>-->
+
+            <!--input -->
+     <li> <form action="/journal12"  method="post">
+            <input id="input" class="controls" type="text" name="filter" placeholder="hello_world" onclick="">
+        </form>
+    </li>
+  
+            <li class="active"><a href="http://welcomehomeserver.ddns.net/">Home</a></li>
+            
+            <li><a href="/map">Live Streaming</a></li>
+            <li><a href="/map">Map Users</a></li>
+            <li><a href="/journal12">Daily News</a></li>
+            <li><a href="/">Cinemas</a></li>
+             <li><a href="/account">Subscribe</a></li>
+              <li><a href="/profile">profile</a></li>
+            
+
+            <li><a onclick="" id="show_map" >Contact</a></li>
+            
+          <ul class="nav navbar-nav navbar-right">
+     
+
+          </ul>
+        
+        </div><!--/.nav-collapse -->
+        
+      </div>
+ 
+</div>
+
+</section>
+    </nav>
+    
+    <!--image banner
+
+    <div id="container_banner">
+      <section class="banner-section">
+</div>-->
+
+    </div><!--fin container header-->
+
+
+
+      <!--banner section-->
+      <div id="container_banner"> 
+      <section class="banner-section"></section>
+      </div> 
+
+
+      <!--container principal dans le body -->
+      <div id="container_content">
+      <!--container menu gauche-->
+      <div id="container_menu">
+              <div id="box_categorie"> 
+                    <!--AFFICHER:[Résultat pour: + value utilisateur]  avec jquery function--> <p id="color_p">Résultat pour:</p>
+                                    <div id="color_name">
+                                      <p>{{name}}</p>
+                                    </div>
+                  <!--AFFICHER [Catégorie:]-->
+                  <p id="p_txt_catégorie"></p>
+                  <!-- afficher [categorie value] avec jquery function-->
+                  <p id="p_catégorie"></p>
+                                        
+                  </br></br>
+
+                  <!--menu categorie btn -->
+
+
+                  <button type="submit" href="#" onclick="economie()" id="btn_categorie">Economie</button>
+
+                  <button type="submit"  onclick="politique()" id="btn_categorie">Politique</button>
+
+                  
+                  <button  type="submit" onclick="evenement()" id="btn_categorie">Event</button>
+
+                  <button type="submit" onclick="sport()" id="btn_categorie">Sport</button>
+
+                  <button type="submit"  onclick="fais()" id="btn_categorie">Fais Divers</button>
+                <!--fin menu categorie btn-->
+              </div><!--fin box-categorie-->
+        </div><!--fin container menu-->
+
+
+<!--container acceuil foreach journal-->
+      <div id="container"></div>
+      
+                <!--container right:-->
+                      <div id="container_right">
+                
+
+
+                                                <!--image website: -->
+                                                <img id="img_container_right" src="https://blog.tcea.org/wp-content/uploads/2019/06/news-1414325_960_720.jpg">
+                                                <!--nom website:-->
+                                                <h1 style="font-size:2vw" >Social News: journal</h1>
+                                                <!--container date:-->
+                                                <p style="font-size:2vw" id="date"></p>
+                                                
+                                                
+                            
+                      </div><!--fin container right-->
+
+                  <!--snakbar-->
+                  <div id="snackbar">{{name}}</div>
+                  <!--fin snackbar -->
+                  <!--snakbar_2-->
+                  <div id="snackbar_filter">{{name}} 
+                   <!--Résultat pour hello world:-->  
+                    <p id="p_economie"></p>     
+
+                  <div><!--fin snackbar 2 -->
+
+  </div> <!--fin container content-->
+
+   
+
+
+
+
+
+<!--date function-->
+<SCRIPT>
+                        var date = new Date();
+                        var afficher_date= document.getElementById('date');
+                        afficher_date.innerHTML=date;
+</SCRIPT>
+<!--fin fonction date-->
+
+<!--fin function snackbar-->
+
+
+<!--function hide categorie-->
+<script> //FUNCTION HIDE SHOW BOX MENU CATEGORIE
+   $(document).ready(function(){
+          $("#show").click(function(){
+          $("#container_menu").slideToggle("slow");
+          });
+        });
+</script>
+<!--fin hide categorie--> 
+
+
+ 
+
+<!--map 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBoWUOnaeXBJbiffCjHp7PInwuP2ccaME&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!--jquery-->
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+    <!--FUNCTION AFFICHER POST -->
+    <script src="../js/FOREACH/journal_function_afficher_total.js"> </script>    
+    <script src="../js/FOREACH/journal_function_afficher_input_utilisateur.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_continent.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_pays.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_region.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_departement.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_ville.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_economie.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_sport.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_politique.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_fais_divers.js"> </script>
+    <script src="../js/FOREACH/journal_function_afficher_evenement.js"> </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
