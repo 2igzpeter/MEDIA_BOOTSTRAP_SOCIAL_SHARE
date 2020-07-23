@@ -59,7 +59,12 @@ module.exports = function(app, passport) {
  })
 
 
-
+ 
+ app.get('/price', function(req, res){
+  res.render('PRICE/price.ejs', {
+   
+  });
+ });
 
  app.get('/article', function(req, res){
     res.render('ARTICLE/article_social_share.ejs', {

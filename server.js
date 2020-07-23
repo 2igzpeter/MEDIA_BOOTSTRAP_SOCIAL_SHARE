@@ -398,7 +398,7 @@ app.post('/result',isLoggedIn, function(req, res) {
     console.log(id_login)
     
       //////////////////////////////////////////////////////////////////
-  
+      
      //CREATE RANDOM ID
      var id_int_random_post = Math.floor(Math.random() * 1000000000);
      console.log("/////////////////////id_int_random_article: " + id_int_random_post);
@@ -575,24 +575,95 @@ app.post('/result',isLoggedIn, function(req, res) {
   
                             //////////////////////////////////////////////////////////////////
   
-  //////////////////////////////////////////////////////////////////
+                            //////////////////////////////////////////////////////////////////
                       
-                        //route for home
-                        app.get('/articles_'+$random_id, (req, res) => {
-  
-  
-  
-                          
-                        //render file form.hbs
-                        res.render('ARTICLE/article_social_share_head.ejs',{
-                          //get value from textname
-                          video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville
-                        });
-                      });
+                            //route for home
+                            app.get('/articles_'+$random_id, (req, res) => {
+      
+      
+      
+                              
+                            //render file form.hbs
+                            res.render('ARTICLE/article_social_share_head.ejs',{
+                              //get value from textname
+                              video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville
+                            });
+
+
+                            //////////////////////////////////////////////////////////////////
+                            app.get('/call_article_comments' , function(req, resp){
+                              console.log("WELCOME FROM THE ROAD COMMENTS")
+                              var sql = mysql.format("SELECT * FROM article_comments WHERE id_article = ? ", [$random_id]);
+                              
+                              connection.query(sql, function(error, rows, fields){
+                              if(error){
+                              console.log('error');
+                              }else{
+                              console.log('successful\n');
+                              console.log(rows);
+                              console.log("LES DATAS COMMENTS :");
+                              console.log(" commance sql : " +sql);
+                              resp.send(rows);
+                              }
+                              })
+                              })
+                              
+                            //////////////////////////////////////////////////////////////////
+
+
+
+                              //////////////////////////////////////////////////////////////////
+                                                          
+                              app.post('/article_comments', function(req, resp){
+                                console.log("WELCOME TO ARTICLE COMMENTS POST");
+                                //CATCH DATA ARTICLE COMMENTS
+                                var recup_comments_value_article = req.body.post_comments;
+                                //VARIABLE NEW DATE COMMENT
+                                var date_user_comment = new Date();
+                                console.log("/////////////////////////////////////////USER COMMENT DATE: " + date);
+
+                                
+                                    //CONSOLE LOG DATA
+                                    console.log(recup_comments_value_article);
+
+                                    //VARIABLE INSERT
+                                    var sql = "INSERT INTO `article_comments` (`comments`, `id_article`, `date_comment`) VALUES (?,?,?)";
+
+                                    //CONNEXION DATABASE
+                                    connection.query(sql, [recup_comments_value_article, $random_id, date_user_comment], function (err, result) {
+                                      
+                                              
+                                  // console.log(err);
+                                    if (err) throw err;
+                                    console.log("//////////////////////////////////////////////NEW COMMENT INSERT INTO TABLE COMMENTS");
+                                    console.log('SERVER ARTICLES COMMENTS IS OK! /////////////////////////////////////////////////////////');
+                                  });
+
+
+
+
+
+                                       
+                                
+
+
+                                
+                                  resp.redirect('/articles_'+$random_id);
+                                });
+
+
+                                    //////////////////////////////////////////////////////////////////
+
+
+                          });
+
+                            
+                                  
+                             
                       
   
                       
-    }//FIN FUNCTION INPUT POST
+    }//FIN FUNCTION INSERT POST
     insertPost();
     
     
@@ -618,9 +689,13 @@ app.post('/result',isLoggedIn, function(req, res) {
   //////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////
 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                  
+  
 
+                             
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

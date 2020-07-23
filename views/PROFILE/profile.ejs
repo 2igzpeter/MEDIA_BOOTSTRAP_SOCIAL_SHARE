@@ -85,7 +85,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <strong>MDB</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,6 +104,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
             </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/price">Abonnements</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="/profile/build_post">Build post</a>
             </li>
@@ -117,13 +120,13 @@
             </div>
           </form>
         </div>
-        
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"> Welcome: <%= user.username %></a>
+          </li>
+        </ul>
       </div>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"> Welcome: <%= user.username %></a>
-        </li>
-      </ul>
+      
 
     </nav>
     <!-- Navbar -->
@@ -133,10 +136,11 @@
 
     <!-- Full Page Intro -->
     <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      
       <!-- Mask & flexbox options-->
       <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
        
-
+          
 
         
       </div>

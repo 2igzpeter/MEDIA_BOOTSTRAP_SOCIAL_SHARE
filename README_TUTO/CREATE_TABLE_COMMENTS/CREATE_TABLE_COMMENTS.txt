@@ -1,0 +1,10 @@
+
+
+CREATE TABLE article_comments (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    comments VARCHAR(10000) NOT NULL,
+    id_article VARCHAR (10000) NOT NULL,
+    date_comment VARCHAR (1000) NOT NULL,
+    PRIMARY KEY (id)
+)
+ENGINE=INNODB;

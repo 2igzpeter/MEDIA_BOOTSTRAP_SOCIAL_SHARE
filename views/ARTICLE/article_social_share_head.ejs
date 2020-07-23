@@ -265,9 +265,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/profile/build_post">Build post</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/logout">Log out</a>
-            </li>
+            
           </ul>
           <form class="form-inline">
             <div class="md-form my-0">
@@ -301,20 +299,20 @@
         <!-- Blog Entries Column -->
         <div class="col-lg-8 col-md-8 " style="min-width: ;">
         
-          <div class="card">
+          <div class=" ">
             <!--Section: Content-->
-            <section class=" dark-grey-text bg-light">
+            <section class="btn-indigo dark-light-text">
       
                 <!--Grid column-->
-                <div class="col-lg-12">
+                <div class="col-lg-12 ">
                      <!-- Title -->
-                     <h1 class=""><i class="fas fa-quote-left pr-2"></i><a class="font-weight-bold"><%= titre %></a> <i class="fas fa-quote-right pr-2"></i></h1>
+                     <h1 class=""><i class="fas fa-quote-left pr-2"></i> <a class="font-weight-bold"> <%= titre %></a> <i class="fas fa-quote-right pr-2"></i></h1>
                     <!-- Author -->
                     
                 </div>
                 <!--Grid column-->
                 <!--Grid row-->
-                      <div class="container-fluid">
+                      <div class="container-fluid ">
                         <div class="row">
                           <div class="col-sm-1">
                             <img src="images/icon_anonymous.png" style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle z-depth-1 img-fluid">
@@ -347,24 +345,23 @@
 
 
           
-          <hr>
-          <div class="container-fluid bg-light">
-            <div class="row">
+          <div class=" btn-elegant  ">
+            <div class="row ">
               <div class="col-sm-5">
-                <cite title="Source Title" class="blockquote-footer">Posté le: <a class="font-weight-bold"><%= date %></a></cite>
+                <cite title="Source Title " class="blockquote-footer white-text">Posté le: <a class="font-weight-bold amber-text"><%= date %></a></cite>
               </div>
               <div class="col-sm">
                 
-                <cite title="Source Title" class="blockquote-footer">                  
-                  Report by: <a href="/profile"><%= reporter %></a></cite>
+                <cite title="Source Title" class="blockquote-footer white-text">                  
+                  Report by: <a href="/profile" class="amber-text"><%= reporter %></a></cite>
                   
               </div>
               <div class="col-sm">
-                <cite title="Source Title" class="blockquote-footer"> Catégorie: <a href="/journal12"><%= categorie %></a></cite>
+                <cite title="Source Title" class="blockquote-footer white-text"> Catégorie: <a href="/journal12" class="amber-text"><%= categorie %></a></cite>
                 
               </div>
               <div class="col-sm">
-                <cite title="Source Title" class="blockquote-footer">Vues: <a href="#" class="font-weight-bold">987654</a> </cite>
+                <cite title="Source Title" class="blockquote-footer white-text">Vues: <a href="#" class="font-weight-bold amber-text">987654</a> </cite>
               </div>
             </div>
           </div>
@@ -404,27 +401,27 @@
             </div>
         
 
-          <blockquote class="blockquote">
+          <blockquote class="blockquote ">
             <hr>
-            <footer class="bg-light ">
-              <div class="container-fluid">
-                <div class="row">
+            <footer class=" ">
+              <div class="container-fluid btn-elegant">
+                <div class="row ">
                   
                   
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer">Continent:<a href="" class="titre-article"><%= continent %></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Continent:<a href="" class="titre-article amber-text"><%= continent %></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer">Pays:<a href="" class="titre-article"><%= pays%></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Pays:<a href="" class="titre-article amber-text"><%= pays%></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer">Région:<a href="#" class="titre-article"> <%=region %></a></cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Région:<a href="#" class="titre-article amber-text"> <%=region %></a></cite>
                  </div>
                  <div class="col-sm">
-                  <cite title="Source Title" class="blockquote-footer">Département:<a href="" class="titre-article"><%= departement %></a>  </cite>
+                  <cite title="Source Title" class="blockquote-footer white-text">Département:<a href="" class="titre-article amber-text"><%= departement %></a>  </cite>
                 </div>
                 <div class="col-sm">
-                  <cite title="Source Title" class="blockquote-footer"><a href="#" class="titre-article">Ville: <%=ville %></a></cite>
+                  <cite title="Source Title" class="blockquote-footer white-text"><a href="#" class="titre-article amber-text">Ville: <%=ville %></a></cite>
                </div>
                   
                 </div>
@@ -437,53 +434,25 @@
 
           <!-- Comments Form -->
           <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
+            <h5 class="card-header">Laisser un commentaire:</h5>
             <div class="card-body">
-              <form>
+              <form action="/article_comments" method="POST">
                 <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
+                  <textarea class="form-control" rows="3" name="post_comments" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn blue-gradient">Submit</button>
               </form>
             </div>
           </div>
 
-          <!-- Single Comment -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
+
+          <!-- Comments Form -->
+          <div class="" style="height: auto; max-height: 100%; width: auto; min-width: 100%; overflow: ;">
+             <div id="id_container_comments" class="" style="height: ; width: 100%; min-width: auto; "></br>
+             </div> 
           </div>
 
-          <!-- Comment with nested comments -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
+        </div><!--fin div col-8-->
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4" style="min-width: ;">
@@ -709,7 +678,17 @@
 
 <!--Footer-->
 <footer>
-
+<!-- Card footer -->
+<div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+  <ul class="list-unstyled list-inline font-small">
+    <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>05/10/2015</li>
+    <li class="list-inline-item pr-2"><a href="#" class="white-text"><i
+          class="far fa-comments pr-1"></i>12</a></li>
+    <li class="list-inline-item pr-2"><a href="#" class="white-text"><i class="fab fa-facebook-f pr-1">
+        </i>21</a></li>
+    <li class="list-inline-item"><a href="#" class="white-text"><i class="fab fa-twitter pr-1"> </i>5</a></li>
+  </ul>
+</div>
 </footer>
 <!--Footer-->
 
@@ -777,9 +756,7 @@
             p_mb_1_1.setAttribute('class', 'mb-1');
             div_col_lg_8.appendChild(p_mb_1_1);
 
-            var p_mb_1_2 = document.createElement('p');
-            p_mb_1_2.setAttribute('class', 'mb-1');
-            div_col_lg_8.appendChild(p_mb_1_2);
+            
 
 
             var balise_strong_into_p_mb_1_1 = document.createElement('strong');
@@ -788,41 +765,132 @@
             var txt_balise_strong = document.createTextNode(viewPost.titre_article);
             balise_strong_into_p_mb_1_1.appendChild(txt_balise_strong);
 
-            var i_into_p_mb_1_2  = document.createElement('i');
-            p_mb_1_2.appendChild(i_into_p_mb_1_2);
-            var txt_balise_i_into_p_mb_1_2 = document.createTextNode('ajouter icon nbr de vue, like, share'); 
-            i_into_p_mb_1_2.appendChild(txt_balise_i_into_p_mb_1_2);
-
+           
             var balise_hr = document.createElement('hr');
             div_card_body_m1.appendChild(balise_hr);
 
-            var balise_row_into_div_card_body_m1 = document.createElement('div');
-            balise_row_into_div_card_body_m1.setAttribute('class','row');
-            div_card_body_m1.appendChild(balise_row_into_div_card_body_m1);
-
-            var balise_p_into_balise_row_into_div_card_body_m1 = document.createElement('p');
-            balise_p_into_balise_row_into_div_card_body_m1.setAttribute('class','text-muted card-text mt-2 px-4 mb-2');
-            balise_row_into_div_card_body_m1.appendChild(balise_p_into_balise_row_into_div_card_body_m1);
-
-
-            var txt_into_balise_p_into_balise_row_into_div_card_body_m1 = document.createTextNode("description article / phrase d'acroche / 2 lignes maximum");
-            balise_p_into_balise_row_into_div_card_body_m1.appendChild(txt_into_balise_p_into_balise_row_into_div_card_body_m1);
-
-
-            
+          
 
           var balise_br_into_row = document.createElement('br');
           div_col_lg_6.appendChild(balise_br_into_row);
 
 
   
-          var button_link_post = document.createElement('button');
+          var button_link_post = document.createElement('a');
           button_link_post.setAttribute('id', 'id_button_link_article');
           button_link_post.setAttribute('class', 'btn blue-gradient text-center');
           button_link_post.setAttribute('type', 'button');
+          button_link_post.setAttribute('href', viewPost.url_post);
+          button_link_post.setAttribute('target', '_blank');
           div_card_body_m1.appendChild(button_link_post);
           var txt_button_link_post = document.createTextNode('See reaction');
           button_link_post.appendChild(txt_button_link_post);
+
+          //FOOTER
+          var balise_footer = document.createElement('footer');
+          div_card_body_m1.appendChild(balise_footer);
+
+          //DIV PARENT
+          var div_class_rounded_bottom = document.createElement('div');
+          div_class_rounded_bottom.setAttribute('class', 'rounded-bottom btn-elegant lighten-3 text-center pt-3');
+          balise_footer.appendChild(div_class_rounded_bottom);
+          //UL DANS DIV PARENT
+          var ul_class_list_unstyled = document.createElement('ul');
+           ul_class_list_unstyled.setAttribute('class', 'list-unstyled list-inline font-small');
+          div_class_rounded_bottom.appendChild(ul_class_list_unstyled);
+          //LI DANS UL
+          var li_class_list_inline_item = document.createElement('li');
+          li_class_list_inline_item.setAttribute('class', 'list-inline-item pr-2 white-text');
+          ul_class_list_unstyled.appendChild(li_class_list_inline_item);
+
+          //LI DANS LI
+          var li_class_far_fa_clock = document.createElement('li');
+          li_class_far_fa_clock.setAttribute('class', 'far fa-clock pr-1');
+          li_class_list_inline_item.appendChild(li_class_far_fa_clock);
+
+          //DATE INTO LI_LIST_INLINE
+          var text_date = document.createTextNode('05/07/20204');
+          li_class_list_inline_item.appendChild(text_date);
+
+          //LI CLASS LIST INLINE ITEM 2 INTO UL
+          var li_class_list_inline_item_2 = document.createElement('li');
+          li_class_list_inline_item_2.setAttribute('class', 'list-inline-item pr-2');
+          ul_class_list_unstyled.appendChild(li_class_list_inline_item_2);
+
+          //A DANS LI LISTE INLINE ITEM 2
+          var a_class_white_text = document.createElement('a');
+          a_class_white_text.setAttribute('class', 'white-text');
+          li_class_list_inline_item_2.appendChild(a_class_white_text);
+
+          //I DANS A
+          var i_class_far_fa_comments =document.createElement('i');
+          i_class_far_fa_comments.setAttribute('class', 'far fa-eye pr-1');
+          a_class_white_text.appendChild(i_class_far_fa_comments);
+
+          //TEXT DANS A
+          var txt_link = document.createTextNode('12');
+          a_class_white_text.appendChild(txt_link);
+
+          //LI DANS UL
+          var li_class_list_inline_item_3 = document.createElement('li');
+          li_class_list_inline_item_3.setAttribute('class', 'list-inline-item pr-2');
+          ul_class_list_unstyled.appendChild(li_class_list_inline_item_3);
+
+          //A DANS LI 3
+          var a_class_white_text_2 = document.createElement('a');
+          a_class_white_text_2.setAttribute('class', 'white-text');
+          li_class_list_inline_item_3.appendChild( a_class_white_text_2);
+
+          //I DANS A 2
+          var i_class_fab_fa_facebook = document.createElement('li');
+          i_class_fab_fa_facebook.setAttribute('class', 'far fa-comments pr-1');
+          a_class_white_text_2.appendChild(i_class_fab_fa_facebook);
+
+          //TEXT DANS A 2
+          var text_into_a_2 = document.createTextNode('21');
+          a_class_white_text_2.appendChild(text_into_a_2);
+
+          //LI DANS UL
+          var li_class_list_inline_item_4 = document.createElement('li');
+          li_class_list_inline_item_4.setAttribute('class', 'list-inline-item');
+          ul_class_list_unstyled.appendChild(li_class_list_inline_item_4);
+
+          //A 3 INTO LI 4
+          var a_class_white_text_3 = document.createElement('a');
+          a_class_white_text_3.setAttribute('class', 'white-text');
+          li_class_list_inline_item_4.appendChild(a_class_white_text_3);
+
+          //LI 4 INTO A 3
+          var li_class_list_inline_item_5 = document.createElement('li');
+          li_class_list_inline_item_5.setAttribute('class', 'fab fa-twitter pr-1');
+          a_class_white_text_3.appendChild(li_class_list_inline_item_5);
+
+          //TEXT INTO A 
+          var text_into_a_3 = document.createTextNode('5');
+          a_class_white_text_3.appendChild(text_into_a_3);
+
+
+          
+
+         
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+         
+
 
 
 
@@ -896,6 +964,122 @@
   }
   
     user_post_img();
+  
+  
+  </script>
+        
+
+
+
+
+
+
+<!--afficher COMMENTS-->
+<script>
+
+  function user_post_comments(){
+  
+  //LE TABLEAU JS EST PASSé DANS UNE FONCTION
+  function afficherComments(tableauComments) {
+      tableauComments.forEach(function (comments) {
+
+       
+
+        var div_class_media = document.createElement('div');
+        div_class_media.setAttribute('class' , '');
+        id_container_comments.appendChild(div_class_media);
+
+        var section_class_p_md = document.createElement('section');
+        section_class_p_md.setAttribute('class', ' text-center text-lg-left light z-depth-1');
+        section_class_p_md.setAttribute('style', '');
+        div_class_media.appendChild(section_class_p_md);
+
+        var div_class_row_d_flex = document.createElement('div');
+        div_class_row_d_flex.setAttribute('class', 'row d-flex justify-content-center');
+        section_class_p_md.appendChild(div_class_row_d_flex);
+
+        var div_class_col_md_10 = document.createElement('div');
+        div_class_col_md_10.setAttribute('class', 'col-md-12');
+        div_class_row_d_flex.appendChild(div_class_col_md_10);
+
+        var div_class_card_comment = document.createElement('div');
+        div_class_card_comment.setAttribute('class', 'card');
+        div_class_col_md_10.appendChild(div_class_card_comment);
+
+        var div_class_card_body_comment = document.createElement('div');
+        div_class_card_body_comment.setAttribute('class', 'card-body m-3');
+        div_class_card_comment.appendChild(div_class_card_body_comment);
+
+        var div_class_row_comment = document.createElement('div');
+        div_class_row_comment.setAttribute('class', 'row');
+        div_class_card_body_comment.appendChild(div_class_row_comment);
+
+        var div_class_col_lg_4 = document.createElement('div');
+        div_class_col_lg_4.setAttribute('class', 'col-lg-4 d-flex mb-2 align-items-center');
+        div_class_row_comment.appendChild(div_class_col_lg_4);
+
+
+        var div_class_avatar_mx_4 = document.createElement('div');
+        div_class_avatar_mx_4.setAttribute('class', 'avatar mx-4 w-100 white d-flex justify-content-center align-items-center');
+        div_class_col_lg_4.appendChild(div_class_avatar_mx_4);
+
+        var img_comment_user = document.createElement('img');
+        img_comment_user.setAttribute('src', 'images/anonymous_mask.png');
+        img_comment_user.setAttribute('class', 'rounded-circle img-fluid z-depth-1');
+        div_class_avatar_mx_4.appendChild(img_comment_user);
+
+        var div_class_col_lg_8 = document.createElement('div');
+        div_class_col_lg_8.setAttribute('class', 'col-lg-8');
+        div_class_row_comment.appendChild(div_class_col_lg_8);
+
+        var div_class_text_muted = document.createElement('p');
+        div_class_text_muted.setAttribute('class', 'font-weight-bold lead mb-2');
+        div_class_col_lg_8.appendChild(div_class_text_muted);
+        var text_div_class_text_muted = document.createTextNode("Un anonyme à dit: ");
+        div_class_text_muted.appendChild(text_div_class_text_muted);
+
+        var p_comments_user_2 = document.createElement('p');
+        p_comments_user_2.setAttribute('class', 'text-muted font-weight-light mb-4');
+        div_class_col_lg_8.appendChild(p_comments_user_2);
+        var balise_strong_into_p_comments_user_2 = document.createElement('strong');
+        p_comments_user_2.appendChild(balise_strong_into_p_comments_user_2);
+        var text_into_strong = document.createTextNode(comments.comments);
+        balise_strong_into_p_comments_user_2.appendChild(text_into_strong);
+
+        balise_hr_into_col_lg_8 = document.createElement('hr');
+        div_class_col_lg_8.appendChild(balise_hr_into_col_lg_8);
+
+        var p_comments_user_3 = document.createElement('p');
+        p_comments_user_3.setAttribute('class', 'font-weight-bold text-muted mb-0');
+        div_class_col_lg_8.appendChild(p_comments_user_3);
+        var text_into_class_p_comments_user_3 = document.createTextNode("Posté le: " + comments.date_comment);
+        p_comments_user_3.appendChild(text_into_class_p_comments_user_3);
+
+
+
+
+
+
+
+
+
+        
+
+
+  
+      })};
+  
+      
+      
+      $.get("/call_article_comments", function (response, error) {
+         
+          console.log(error);
+          console.log(response);
+       afficherComments(response);
+  });
+  }
+  
+    user_post_comments();
   
   
   </script>
