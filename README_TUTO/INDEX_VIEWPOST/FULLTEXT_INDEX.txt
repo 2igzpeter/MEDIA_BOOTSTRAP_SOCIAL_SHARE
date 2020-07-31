@@ -1,0 +1,11 @@
+
+///////////////////////////////////////////////////////
+
+		FULL TEXT INDEX
+	   TABLE viewpost
+
+//////////////////////////////////////////////////////
+
+CREATE FULLTEXT INDEX ind_input ON viewpost (titre_article, url_post, url_img, url_video, description_article, name_chaine,pays,categorie, name_reporter,users,number_post,continent,region,departement,ville,helloWorld,text_presentation);
+
+////////////////////////////////////////////////////////
