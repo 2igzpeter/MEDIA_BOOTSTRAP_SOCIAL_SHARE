@@ -12,6 +12,15 @@ CREATE TABLE viewpost (
     pays VARCHAR(1000) NULL,
     categorie VARCHAR (50) NULL,
     name_reporter VARCHAR (50) NULL,
+    users VARCHAR (1000) NULL,
+    number_post VARCHAR (1000) NULL,
+    continent VARCHAR (1000) NULL,
+    region VARCHAR (1000) NULL,
+    departement VARCHAR (1000) NULL,
+    ville VARCHAR (1000) NULL,
+    helloWorld VARCHAR (1000) NULL,
+    text_presentation VARCHAR (1000) NULL,	
+    
     PRIMARY KEY (id)
 )
 ENGINE=INNODB;

@@ -107,9 +107,6 @@ const connection = mysql.createConnection({
 //ROAD TO JOURNAL 12
 app.get('/journal12',(req, res) => {
  
-    console.log(req.query);
-    console.log(req.body);
-  
   //render journal10.hbs file
   res.render('JOURNAL/journal.ejs',{
   //get value from 
@@ -120,7 +117,7 @@ app.get('/journal12',(req, res) => {
   //CONNECTION FROM BDD JOURNAL UTILISATEUR/ TO ROAD>>>>>> /TOTAL /DEFINIE SUR PAYS FRANCE
   values= "hello_world";
   
-  console.log("VALEUR MONDIAL POUR: "+values);
+  console.log("VALEUR MONDIAL POUR: "+ values);
   
   app.get('/total', function(req, resp){
   console.log("WELCOME FROM THE ROAD TOTAL")
@@ -171,7 +168,7 @@ app.get('/journal12',(req, res) => {
   
   //FILTER CATEGORIE POLITIQUE +  (REQ.BODY.NAME)
   
-  console.log("VALEUR Mondial POLITIQUE: "+values);
+  console.log("VALEUR Mondial POLITIQUE: " + values);
   
   app.get('/filterPolitique', function(req, resp){
   console.log("WELCOME FROM THE ROAD FILTER POLITIQUE + VALUE UTILISATEUR")
@@ -220,7 +217,7 @@ app.get('/journal12',(req, res) => {
   
   //FILTER CATEGORIE SPORT+  (REQ.BODY.NAME)
   
-  console.log("VALEUR Mondial SPORT: "+values);
+  console.log("VALEUR Mondial SPORT: " + values);
   
   app.get('/filterSport', function(req, resp){
   console.log("WELCOME FROM THE ROAD FILTER SPORT + VALUE UTILISATEUR")
@@ -252,7 +249,7 @@ app.get('/journal12',(req, res) => {
   console.log("WELCOME FROM THE ROAD FILTER FAIS DIVERS + VALUE UTILISATEUR")
   
   var filterFaisDivers= mysql.format("SELECT * FROM viewpost WHERE MATCH(titre_article, url_post, url_img, url_video, description_article, name_chaine,pays,categorie, name_reporter,users,number_post,continent,region,departement,ville,helloWorld,text_presentation) AGAINST (?) AND categorie='Fais Divers' ",[values]);
-  con.query(filterFaisDivers, function(error, rows, fields){
+  connection.query(filterFaisDivers, function(error, rows, fields){
   if(error){
   console.log('error');
   }else{
@@ -270,9 +267,9 @@ app.get('/journal12',(req, res) => {
   
   app.get('/inputUtilisateur', function(req, resp){
   console.log("WELCOME FROM THE ROAD VARIABLE UTILISATEUR")
-  var filterContinent = mysql.format("SELECT * FROM viewpost WHERE MATCH(titre_article, url_post, url_img, url_video, description_article, name_chaine,pays,categorie, name_reporter,users,number_post,continent,region,departement,ville,helloWorld,text_presentation) AGAINST (?)", [values]);
+  var filterInput = mysql.format("SELECT * FROM viewpost WHERE MATCH(titre_article, url_post, url_img, url_video, description_article, name_chaine,pays,categorie, name_reporter,users,number_post,continent,region,departement,ville,helloWorld,text_presentation) AGAINST (?)", [values]);
   
-  connection.query(filterContinent, function(error, rows, fields){
+  connection.query(filterInput, function(error, rows, fields){
   if(error){
   console.log('error');
   }else{
@@ -280,7 +277,7 @@ app.get('/journal12',(req, res) => {
   console.log(rows);
   console.log("WELCOME FROM: ROAD CONTINENT IS READY!");
   console.log("LES DATAS CONTINENT:");
-  console.log(" commance sql : " +filterContinent);
+  console.log(" commance sql : " +filterInput);
   console.log(" values: " + values);
   resp.send(rows);
   }
@@ -344,7 +341,7 @@ app.get('/journal12',(req, res) => {
   
   //recup value from journal12 APP.POST RUCUP VARIABLE UTILISATEUR TO BDD 
   values= req.body.filter;
-  console.log("values: " +values);
+  console.log("values: " + values);
   
   
   
