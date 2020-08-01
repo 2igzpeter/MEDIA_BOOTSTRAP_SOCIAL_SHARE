@@ -15,7 +15,7 @@ const port = process.env.PORT || 8080;
 var passport = require('passport');
 var flash = require('connect-flash');
 
-require('./config/passport')(passport);
+require('./config/passport')(passport, app);
 
 
 

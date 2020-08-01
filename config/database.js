@@ -10,4 +10,4 @@ module.exports = {
  'journalutilisateur_table':'journalutilisateur'
 }
 
-console.log('./database.js is ok')
+console.log('fichier ./database.js is ok');

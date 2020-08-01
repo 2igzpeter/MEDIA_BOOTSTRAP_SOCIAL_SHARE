@@ -1,15 +1,46 @@
 module.exports = function(app, passport) {
+console.log('fichier ./route is ok!');
+
+//ROAD TO SIGNUP 
+app.get('/signup', function(req, res){
+  //RENDER SIGNUP EJS
+  res.render('LOGIN/signup.ejs', {message: req.flash('signupMessage')});
+});
+
+
+
+
+//ROAD APP POST SIGNUP [PASSPORT STRATEGIY AUTHENTICATE]
+app.post('/signup', passport.authenticate('local-signup', {
+  //SUCCESS REDIRECT PROFILE
+successRedirect: '/profile',
+//ERROR REDIRECT SIGNUP
+failureRedirect: '/signup',
+//FLASH
+failureFlash: true
+}));
+
+
+
 
 
  app.get('/login', function(req, res){
   res.render('LOGIN/login.ejs', {message:req.flash('loginMessage')});
  });
 
+
+
+
+
  app.post('/login', passport.authenticate('local-login', {
   successRedirect: '/profile',
   failureRedirect: '/login',
   failureFlash: true
  }),
+
+
+
+
   function(req, res){
    if(req.body.remember){
     req.session.cookie.maxAge = 1000 * 60 * 3;
@@ -19,9 +50,13 @@ module.exports = function(app, passport) {
    res.redirect('/');
   });
 
+
+
+
  app.get('/', function(req, res){
   res.render('ACCEUIL/index.ejs', {message: req.flash('signupMessage')});
  });
+
 
 
 

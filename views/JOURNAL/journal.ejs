@@ -62,16 +62,16 @@
     }
   
     .top-nav-collapse {
-      background-color: #3f51b5 !important;
+      background-color: #424f95 !important;
     }
   
     .navbar:not(.top-nav-collapse) {
-      background: #3f51b5 !important;
+      background: #424f95 !important;
     }
   
     @media (max-width: 991px) {
      .navbar:not(.top-nav-collapse) {
-      background: #3f51b5 !important;
+      background: #424f95 !important;
      }
     }
     
@@ -98,12 +98,14 @@
   <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top scrolling-navbar">
+     <!--Navbar-->
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
       <div class="container">
         <a class="navbar-brand" href="/">
           <strong>MDB</strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+          aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
@@ -119,25 +121,18 @@
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/price">Abonnements</a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="/profile/build_post">Build post</a>
+              <a class="nav-link" href="/price">Abonnements</a>
             </li>
             
           </ul>
-            <form class="form-inline" action="/journal12"  method="post">
+          <form class="form-inline" action="/journal12"  method="post">
             <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="hello_world" name="filter">
+              <input class="form-control mr-sm-2" type="text" placeholder="hello_world" aria-label="hello_world" name="filter">
             </div>
           </form>
-          
         </div>
-       
       </div>
-      
-
     </nav>
     <!-- Navbar -->
     <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -226,7 +221,6 @@
 
    
     <!--FUNCTION AFFICHER POST -->
-    <script src="./js/FOREACH/journal_function_afficher_total.js"> </script>    
     <script src="./js/FOREACH/journal_function_afficher_input_utilisateur.js"> </script>
     <script src="./js/FOREACH/journal_function_afficher_continent.js"> </script>
     <script src="./js/FOREACH/journal_function_afficher_pays.js"> </script>

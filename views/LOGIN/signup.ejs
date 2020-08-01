@@ -85,40 +85,40 @@
     <!-- Navbar -->
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <strong>MDB</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
-          aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/home">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/journal12">Journal</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/price">Abonnements</a>
-            </li>
-            
-          </ul>
-          <form class="form-inline">
-            <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </div>
-          </form>
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <strong>MDB</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+            aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/home">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/journal12">Journal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/price">Abonnements</a>
+              </li>
+              
+            </ul>
+            <form class="form-inline">
+              <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     <!-- Navbar -->
     <!-- Full Page Intro -->
     <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -130,7 +130,7 @@
           <div class="row mt-5">
             <!--Grid column-->
             <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-              <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Sign in right now! </h1>
+              <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Sign up right now! </h1>
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
               <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga
               nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea
@@ -146,11 +146,11 @@
                   <!--Header-->
                   <div class="text-center">
                     <h3 class="white-text font-weight-bold">
-                      <i class="fa fa-user white-text"></i> Login:</h3>
+                      <i class="fa fa-user white-text"></i> Sign Up:</h3>
                     <hr class="hr-light">
                   </div>
                   <!--Body-->
-                 <form action="/login" method="POST">
+                 <form action="/signup" method="POST">
 
                  
                   <div class="md-form">
@@ -164,7 +164,7 @@
                     <label for="form4">Your password</label>
                   </div>
                   <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-indigo btn-rounded">Sign in</button>
+                    <button type="submit" class="btn btn-indigo btn-rounded">Sign up</button>
                     <div style="color:red">
                     <!--EJS FUNCTION ERROR MESSAGE-->
                     <% if(message.length > 0) { %>
