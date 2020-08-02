@@ -687,15 +687,19 @@ app.post('/result',isLoggedIn, function(req, res) {
   /////////////////////////////////////////////////////////////////
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                  
+                 
   
- app.get('/profile/my_posts', isLoggedIn, function(req, res){
+ app.get('/my_posts', isLoggedIn, function(req, res){
 
+ 
+  res.render('PROFILE/my_posts.ejs',  {
+   user:req.user,
+   user_id: req.user.id
+  });
   var user_id = req.user.id;
-  console.log(user_id);
-   
- //////////////////////////////////////////////////////////////////
- app.get('/call_posts' , function(req, resp){
+
+//////////////////////////////////////////////////////////////////
+app.get('/call_posts' , function(req, resp){
   console.log("WELCOME FROM THE ROAD USER POSTS");
   var sql = mysql.format("SELECT * FROM viewpost WHERE users = ? ", [user_id]);
   
@@ -711,12 +715,51 @@ app.post('/result',isLoggedIn, function(req, res) {
   })
   })
 //////////////////////////////////////////////////////////////////
-  res.render('PROFILE/my_posts.ejs', {
-   user:req.user,
-   user_id: req.user.id
-  });
-
   
+ });
+
+ //ROAD TO PROFILE
+ app.get('/profile/my_posts', isLoggedIn,(req, res) => {
+ 
+   //REQ ID = ID USER LOG IN
+   id_login = req.user.id;
+   
+   //RESPONSE RENDER FUNCTION(VIEW .EJS, {CLEF VALEUR USER OBJET})
+   res.render('PROFILE/my_posts.ejs',{user:req.user});
+ 
+   //VARIABLE VALUES DEFINITION REQ USER ID = FOREING KEY
+    values= req.user.id;
+   
+ 
+    console.log("/////////////////////////////////////////////////////////////REQ USER: ")
+    //SHOW USER REQ .USER.
+    console.log(req.user)
+   //SHOW VARIABLE VALUES
+   console.log("////////////////////////////////////////////////////values : " + values)
+   //FILTER VIEW ROAD FROM BDD 
+   console.log(" ///////////////////////////////////////////////////User_id: " + req.user.id)
+   //FILTER VIEW VALUE
+   console.log("////////////////////////////////////////////////////VALEUR FOREINK: "+values);
+ 
+      
+   app.get('/filterView', function(req, resp){
+           console.log("WELCOME FROM THE ROAD FILTER VIEW")
+ 
+                   var filterView= mysql.format("SELECT * FROM viewpost WHERE users=?" ,[values]);
+                   connection.query(filterView, function(error, rows, fields){
+                   if(error){
+                   console.log('error');
+                   }else{
+                   console.log('successful\n');
+                   console.log(rows);
+                   console.log("LES DATAS FOREING KEY: "+ values);
+                   console.log(" commance sql : " +filterView);
+                   console.log(" values: " + values);
+                   resp.send(rows);
+              }
+             })
+           })
+   
  });
                              
 

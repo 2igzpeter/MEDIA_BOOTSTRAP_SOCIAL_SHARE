@@ -164,7 +164,7 @@
             
         </div>
         <div class="col">
-                     <div id="id_container_posts" class="container-fluid">
+                     <div id="id_container_posts" class="container-fluid ">
 
                     </div>
         </div>
@@ -206,7 +206,7 @@
                 container_view_post.appendChild(div_col_lg_6);
   
                 var div_class_card = document.createElement('div');
-                div_class_card.setAttribute('class', 'card');
+                div_class_card.setAttribute('class', 'card ');
                 div_col_lg_6.appendChild(div_class_card);
   
                 var div_card_body_m1 = document.createElement('div');
@@ -218,15 +218,15 @@
                 div_card_body_m1.appendChild(div_row_mb_4);
   
                 var div_col_lg_4 = document.createElement('div');
-                div_col_lg_4.setAttribute('class', 'col-sm-12 col-lg-12 col-md-12   align-items-center');
+                div_col_lg_4.setAttribute('class', 'col-sm-12 col-lg-12 col-md-12  align-items-center');
                 div_row_mb_4.appendChild(div_col_lg_4);
   
                 var div_avatar = document.createElement('div');
-                div_avatar.setAttribute('class','avatar w-100 white d-flex justify-content-center align-items-center');
+                div_avatar.setAttribute('class',' avatar w-100 morpheus-den-gradient d-flex justify-content-center align-items-center');
                 div_col_lg_4.appendChild(div_avatar);
   
                 var img_avatar = document.createElement('img');
-                img_avatar.setAttribute('class', 'img-fluid z-depth-1');
+                img_avatar.setAttribute('class', 'img-fluid z-depth-1 ');
                 img_avatar.setAttribute('src', viewPost.url_img);
                 div_avatar.appendChild(img_avatar);
   
@@ -261,7 +261,7 @@
     
             var button_link_post = document.createElement('a');
             button_link_post.setAttribute('id', 'id_button_link_article');
-            button_link_post.setAttribute('class', 'btn blue-gradient text-center');
+            button_link_post.setAttribute('class', 'btn btn-block blue-gradient text-center');
             button_link_post.setAttribute('type', 'button');
             button_link_post.setAttribute('href', viewPost.url_post);
             button_link_post.setAttribute('target', '_blank');
@@ -361,7 +361,7 @@
     
         
         
-        $.get("http://localhost:8080/call_posts", function (response, error) {
+        $.get("http://localhost:8080/filterview", function (response, error) {
            
             console.log(error);
             console.log(response);
