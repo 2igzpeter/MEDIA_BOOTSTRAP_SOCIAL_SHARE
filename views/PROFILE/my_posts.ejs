@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>My posts</title>
+
+
+    
+  <!-- JQUERRY foreach-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript"  src="js/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+
+
+
+
+
+ <style>
+
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+  
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 1000px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+  
+    .top-nav-collapse {
+      background-color: #3f51b5 !important;
+    }
+  
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+  
+    @media (max-width: 991px) {
+     .navbar:not(.top-nav-collapse) {
+      background: #3f51b5 !important;
+     }
+    }
+    
+    .rgba-gradient {
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+    }
+  
+    .card {
+      background-color: rgba(126, 123, 215, 0.2);
+    }
+  
+    .md-form label {
+      color: #ffffff;
+    }
+  
+    h6 {
+      line-height: 1.7;
+    }
+  
+  </style>
+  
+  <!-- Main navigation -->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <strong>MDB</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/journal12">Journal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/my_posts">My posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile/build_post">Build post</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/price">Abonnements</a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Log out</a>
+            </li>
+          </ul>
+          <form class="form-inline">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"> Welcome: <%= user.username %></a>
+          </li>
+        </ul>
+      </div>
+      
+
+    </nav>
+    <!-- Navbar -->
+
+
+
+
+    <!-- Full Page Intro -->
+    <div class="view" style="background-image: url('http://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+
+       
+          
+
+        
+      </div>
+      <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+  </header>
+  <!-- Main navigation -->
+
+<button onclick="lasted_posts()">show posts</button>
+ <!--foreach my post-->
+ <div id="id_container_posts">
+
+</div>
+
+
+
+
+
+
+
+<!--afficher ALL-->
+<script>
+
+    function lasted_posts(){
+              document.getElementById("id_container_posts").innerHTML = "";
+    
+    //LE TABLEAU JS EST PASSé DANS UNE FONCTION
+    function afficherLastPosts(tableauDePosts) {
+        tableauDePosts.forEach(function (viewPost) {
+    
+    
+            
+  
+                 //CONTAINER VIEW POST
+                var container_view_post= document.createElement('div');
+                container_view_post.setAttribute('class', 'row');
+                container_view_post.setAttribute('id', 'container_view_post');
+                id_container_posts.appendChild(container_view_post);
+  
+  
+  
+                //DIV 
+                var div_col_lg_6 = document.createElement('div');
+                div_col_lg_6.setAttribute('class', ' col-md-12 col-lg-12 col-sm-12  align-item-stretch');
+                container_view_post.appendChild(div_col_lg_6);
+  
+                var div_class_card = document.createElement('div');
+                div_class_card.setAttribute('class', 'card');
+                div_col_lg_6.appendChild(div_class_card);
+  
+                var div_card_body_m1 = document.createElement('div');
+                div_card_body_m1.setAttribute('class', 'card-body ');
+                div_class_card.appendChild(div_card_body_m1);
+  
+                var div_row_mb_4 = document.createElement('div');
+                div_row_mb_4.setAttribute('class', 'row ');
+                div_card_body_m1.appendChild(div_row_mb_4);
+  
+                var div_col_lg_4 = document.createElement('div');
+                div_col_lg_4.setAttribute('class', 'col-sm-12 col-lg-12 col-md-12   align-items-center');
+                div_row_mb_4.appendChild(div_col_lg_4);
+  
+                var div_avatar = document.createElement('div');
+                div_avatar.setAttribute('class','avatar w-100 white d-flex justify-content-center align-items-center');
+                div_col_lg_4.appendChild(div_avatar);
+  
+                var img_avatar = document.createElement('img');
+                img_avatar.setAttribute('class', 'img-fluid z-depth-1');
+                img_avatar.setAttribute('src', viewPost.url_img);
+                div_avatar.appendChild(img_avatar);
+  
+                var div_col_lg_8 = document.createElement('div');
+                div_col_lg_8.setAttribute('class', 'col-md-12 col-sm-12 col-lg-12 text-muted d-flex flex-column justify-content-end pt-2');
+                div_row_mb_4.appendChild(div_col_lg_8);
+                
+  
+              var p_mb_1_1 = document.createElement('p');
+              p_mb_1_1.setAttribute('class', 'mb-1');
+              div_col_lg_8.appendChild(p_mb_1_1);
+  
+              
+  
+  
+              var balise_strong_into_p_mb_1_1 = document.createElement('strong');
+              p_mb_1_1.appendChild(balise_strong_into_p_mb_1_1);
+  
+              var txt_balise_strong = document.createTextNode(viewPost.titre_article);
+              balise_strong_into_p_mb_1_1.appendChild(txt_balise_strong);
+  
+             
+              var balise_hr = document.createElement('hr');
+              div_card_body_m1.appendChild(balise_hr);
+  
+            
+  
+            var balise_br_into_row = document.createElement('br');
+            div_col_lg_6.appendChild(balise_br_into_row);
+  
+  
+    
+            var button_link_post = document.createElement('a');
+            button_link_post.setAttribute('id', 'id_button_link_article');
+            button_link_post.setAttribute('class', 'btn blue-gradient text-center');
+            button_link_post.setAttribute('type', 'button');
+            button_link_post.setAttribute('href', viewPost.url_post);
+            button_link_post.setAttribute('target', '_blank');
+            div_card_body_m1.appendChild(button_link_post);
+            var txt_button_link_post = document.createTextNode('See reaction');
+            button_link_post.appendChild(txt_button_link_post);
+  
+            //FOOTER
+            var balise_footer = document.createElement('footer');
+            div_card_body_m1.appendChild(balise_footer);
+  
+            //DIV PARENT
+            var div_class_rounded_bottom = document.createElement('div');
+            div_class_rounded_bottom.setAttribute('class', 'rounded-bottom btn-elegant lighten-3 text-center pt-3');
+            balise_footer.appendChild(div_class_rounded_bottom);
+            //UL DANS DIV PARENT
+            var ul_class_list_unstyled = document.createElement('ul');
+             ul_class_list_unstyled.setAttribute('class', 'list-unstyled list-inline font-small');
+            div_class_rounded_bottom.appendChild(ul_class_list_unstyled);
+            //LI DANS UL
+            var li_class_list_inline_item = document.createElement('li');
+            li_class_list_inline_item.setAttribute('class', 'list-inline-item pr-2 white-text');
+            ul_class_list_unstyled.appendChild(li_class_list_inline_item);
+  
+            //LI DANS LI
+            var li_class_far_fa_clock = document.createElement('li');
+            li_class_far_fa_clock.setAttribute('class', 'far fa-clock pr-1');
+            li_class_list_inline_item.appendChild(li_class_far_fa_clock);
+  
+            //DATE INTO LI_LIST_INLINE
+            var text_date = document.createTextNode('05/07/20204');
+            li_class_list_inline_item.appendChild(text_date);
+  
+            //LI CLASS LIST INLINE ITEM 2 INTO UL
+            var li_class_list_inline_item_2 = document.createElement('li');
+            li_class_list_inline_item_2.setAttribute('class', 'list-inline-item pr-2');
+            ul_class_list_unstyled.appendChild(li_class_list_inline_item_2);
+  
+            //A DANS LI LISTE INLINE ITEM 2
+            var a_class_white_text = document.createElement('a');
+            a_class_white_text.setAttribute('class', 'white-text');
+            li_class_list_inline_item_2.appendChild(a_class_white_text);
+  
+            //I DANS A
+            var i_class_far_fa_comments =document.createElement('i');
+            i_class_far_fa_comments.setAttribute('class', 'far fa-eye pr-1');
+            a_class_white_text.appendChild(i_class_far_fa_comments);
+  
+            //TEXT DANS A
+            var txt_link = document.createTextNode('12');
+            a_class_white_text.appendChild(txt_link);
+  
+            //LI DANS UL
+            var li_class_list_inline_item_3 = document.createElement('li');
+            li_class_list_inline_item_3.setAttribute('class', 'list-inline-item pr-2');
+            ul_class_list_unstyled.appendChild(li_class_list_inline_item_3);
+  
+            //A DANS LI 3
+            var a_class_white_text_2 = document.createElement('a');
+            a_class_white_text_2.setAttribute('class', 'white-text');
+            li_class_list_inline_item_3.appendChild( a_class_white_text_2);
+  
+            //I DANS A 2
+            var i_class_fab_fa_facebook = document.createElement('li');
+            i_class_fab_fa_facebook.setAttribute('class', 'far fa-comments pr-1');
+            a_class_white_text_2.appendChild(i_class_fab_fa_facebook);
+  
+            //TEXT DANS A 2
+            var text_into_a_2 = document.createTextNode('21');
+            a_class_white_text_2.appendChild(text_into_a_2);
+  
+            //LI DANS UL
+            var li_class_list_inline_item_4 = document.createElement('li');
+            li_class_list_inline_item_4.setAttribute('class', 'list-inline-item');
+            ul_class_list_unstyled.appendChild(li_class_list_inline_item_4);
+  
+            //A 3 INTO LI 4
+            var a_class_white_text_3 = document.createElement('a');
+            a_class_white_text_3.setAttribute('class', 'white-text');
+            li_class_list_inline_item_4.appendChild(a_class_white_text_3);
+  
+            //LI 4 INTO A 3
+            var li_class_list_inline_item_5 = document.createElement('li');
+            li_class_list_inline_item_5.setAttribute('class', 'fab fa-twitter pr-1');
+            a_class_white_text_3.appendChild(li_class_list_inline_item_5);
+  
+            //TEXT INTO A 
+            var text_into_a_3 = document.createTextNode('5');
+            a_class_white_text_3.appendChild(text_into_a_3);
+  
+  
+            
+
+  
+  
+        })};
+    
+        
+        
+        $.get("http://localhost:8080/call_posts", function (response, error) {
+           
+            console.log(error);
+            console.log(response);
+         afficherLastPosts(response);
+    });
+    }
+    
+      lasted_posts();
+    
+    
+    </script>
+
+  
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+
+
+
+
+   <!-- JQuery -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Bootstrap tooltips -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <!-- MDB core JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+
+
+
+</body>
+</html>

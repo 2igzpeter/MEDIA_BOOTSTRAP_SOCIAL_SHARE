@@ -77,6 +77,8 @@ failureFlash: true
  }));
 
  app.get('/profile', isLoggedIn, function(req, res){
+
+  
   res.render('PROFILE/profile.ejs', {
    user:req.user
   });
