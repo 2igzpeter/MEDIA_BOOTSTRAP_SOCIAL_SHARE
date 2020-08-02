@@ -690,11 +690,14 @@ app.post('/result',isLoggedIn, function(req, res) {
                                   
   
  app.get('/profile/my_posts', isLoggedIn, function(req, res){
+
+  var user_id = req.user.id;
+  console.log(user_id);
    
  //////////////////////////////////////////////////////////////////
  app.get('/call_posts' , function(req, resp){
   console.log("WELCOME FROM THE ROAD USER POSTS");
-  var sql = mysql.format("SELECT * FROM viewpost WHERE users = ? ", [req.user.id]);
+  var sql = mysql.format("SELECT * FROM viewpost WHERE users = ? ", [user_id]);
   
   connection.query(sql, function(error, rows, fields){
   if(error){
@@ -709,7 +712,8 @@ app.post('/result',isLoggedIn, function(req, res) {
   })
 //////////////////////////////////////////////////////////////////
   res.render('PROFILE/my_posts.ejs', {
-   user:req.user
+   user:req.user,
+   user_id: req.user.id
   });
 
   
