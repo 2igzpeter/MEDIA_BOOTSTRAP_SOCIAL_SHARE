@@ -253,6 +253,45 @@ function afficherTous(tableauDeFilms) {
         var txt_into_a_4 = document.createTextNode('5');
          a_into_item_4.appendChild(txt_into_a_4);
 
+         var ul_class_list_unstyled_2 = document.createElement('ul');
+         ul_class_list_unstyled_2.setAttribute('class', 'list-unstyled list-inline font-small');
+         div_class_rounded_bottom_2.appendChild(ul_class_list_unstyled_2);
+         var li_class_list_inline_item_5   = document.createElement('li');
+         li_class_list_inline_item_5.setAttribute('class', 'list-inline-item pr-2 white-text');
+         ul_class_list_unstyled_2.appendChild(li_class_list_inline_item_5);
+
+         var text_continent = document.createTextNode('Continent: ' + news.continent);
+         li_class_list_inline_item_5.appendChild(text_continent);
+         
+         var li_class_list_inline_item_6 = document.createElement('li');
+         li_class_list_inline_item_6.setAttribute('class', 'list-inline-item pr-2 white-text');
+         ul_class_list_unstyled_2.appendChild(li_class_list_inline_item_6);
+
+         var text_pays = document.createTextNode('Pays: ' + news.pays);
+         li_class_list_inline_item_6.appendChild(text_pays);
+
+          var li_class_list_inline_item_7 = document.createElement('li');
+          li_class_list_inline_item_7.setAttribute('class', 'list-inline-item pr-2 white-text');
+          ul_class_list_unstyled_2.appendChild(li_class_list_inline_item_7);
+
+          var text_region = document.createTextNode('Région: ' + news.region);
+          li_class_list_inline_item_7.appendChild(text_region);
+
+          var li_class_list_inline_item_8 = document.createElement('li');
+          li_class_list_inline_item_8.setAttribute('class', 'list-inline-item pr-2 white-text');
+          ul_class_list_unstyled_2.appendChild(li_class_list_inline_item_8);
+
+          text_departement = document.createTextNode('Département: ' + news.departement);
+          li_class_list_inline_item_8.appendChild(text_departement);
+
+          var li_class_list_inline_item_9 = document.createElement('li');
+          ul_class_list_unstyled_2.appendChild(li_class_list_inline_item_9);
+
+          var text_ville = document.createTextNode('Ville: ' + news.ville);
+          li_class_list_inline_item_9.appendChild(text_ville);
+
+
+
 
          function myFunction_snackbar_region() {
 

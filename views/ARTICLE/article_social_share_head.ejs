@@ -301,7 +301,7 @@
         
           <div class=" ">
             <!--Section: Content-->
-            <section class="btn-indigo dark-light-text">
+            <section class="heavy-rain-gradient dark-light-text">
       
                 <!--Grid column-->
                 <div class="col-lg-12 ">
@@ -361,7 +361,7 @@
                 
               </div>
               <div class="col-sm">
-                <cite title="Source Title" class="blockquote-footer white-text">Vues: <a href="#" class="font-weight-bold amber-text">987654</a> </cite>
+                <cite title="Source Title" class="blockquote-footer white-text">Vues: <a href="#" class="font-weight-bold amber-text"><%=userCount %></a> </cite>
               </div>
             </div>
           </div>
@@ -386,13 +386,13 @@
                     <img src="images/anonymous_mask.png" style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle img-fluid">
                 </div>
                   <div class="col-sm-1">
-                    <cite title="Source Title" class="blockquote-footer">Report by:<a href="/profile" class="titre-article"><%= reporter %></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer">Report by: <a href="/profile" class="titre-article"><%= reporter %></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer">TV chain:<a href="/profile" class="titre-article"><%= socity %></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer">TV chain: <a href="/profile" class="titre-article"><%= socity %></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer"><a href="#" class="titre-article">Posted: <%=date %></a></cite>
+                    <cite title="Source Title" class="blockquote-footer">Posted: <a href="#" class="titre-article"> <%=date %></a></cite>
                   
                 </div>
                
@@ -409,19 +409,19 @@
                   
                   
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer white-text">Continent:<a href="" class="titre-article amber-text"><%= continent %></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Continent: <a href="" class="titre-article amber-text"><%= continent %></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer white-text">Pays:<a href="" class="titre-article amber-text"><%= pays%></a>  </cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Pays: <a href="" class="titre-article amber-text"><%= pays%></a>  </cite>
                   </div>
                   <div class="col-sm">
-                    <cite title="Source Title" class="blockquote-footer white-text">Région:<a href="#" class="titre-article amber-text"> <%=region %></a></cite>
+                    <cite title="Source Title" class="blockquote-footer white-text">Région: <a href="#" class="titre-article amber-text"><%=region %></a></cite>
                  </div>
                  <div class="col-sm">
-                  <cite title="Source Title" class="blockquote-footer white-text">Département:<a href="" class="titre-article amber-text"><%= departement %></a>  </cite>
+                  <cite title="Source Title" class="blockquote-footer white-text">Département: <a href="" class="titre-article amber-text"><%= departement %></a>  </cite>
                 </div>
                 <div class="col-sm">
-                  <cite title="Source Title" class="blockquote-footer white-text"><a href="#" class="titre-article amber-text">Ville: <%=ville %></a></cite>
+                  <cite title="Source Title" class="blockquote-footer white-text">Ville: <a href="#" class="titre-article amber-text"><%=ville %></a></cite>
                </div>
                   
                 </div>
@@ -440,7 +440,7 @@
                 <div class="form-group">
                   <textarea class="form-control" rows="3" name="post_comments" required></textarea>
                 </div>
-                <button type="submit" class="btn blue-gradient">Submit</button>
+                <button type="submit" class="btn btn-block blue-gradient">Submit</button>
               </form>
             </div>
           </div>
@@ -762,7 +762,7 @@
   
           var button_link_post = document.createElement('a');
           button_link_post.setAttribute('id', 'id_button_link_article');
-          button_link_post.setAttribute('class', 'btn blue-gradient text-center');
+          button_link_post.setAttribute('class', 'btn btn-block blue-gradient text-center');
           button_link_post.setAttribute('type', 'button');
           button_link_post.setAttribute('href', viewPost.url_post);
           button_link_post.setAttribute('target', '_blank');
@@ -856,24 +856,7 @@
 
           
 
-         
-
-
-
-
-
-
-
-
-
-
-
-          
-
-
-
-
-         
+    
 
 
 

@@ -1,4 +1,4 @@
-module.exports = function(app, passport) {
+module.exports = function(app, passport, url) {
 console.log('fichier ./route is ok!');
 
 //ROAD TO SIGNUP 
@@ -103,8 +103,10 @@ failureFlash: true
  });
 
  app.get('/article', function(req, res){
+   
+    
     res.render('ARTICLE/article_social_share.ejs', {
-     
+    
     });
    });
 

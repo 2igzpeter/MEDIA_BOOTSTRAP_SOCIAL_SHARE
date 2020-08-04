@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 const path = require('path');
-
+var url = require("url");
 var mysql = require('mysql');
 const cors = require('cors');
 
@@ -89,7 +89,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 
-require('./app/routes.js')(app, passport);
+require('./app/routes.js')(app, passport, url);
 
 
 
@@ -573,17 +573,24 @@ app.post('/result',isLoggedIn, function(req, res) {
                             //////////////////////////////////////////////////////////////////
   
                             //////////////////////////////////////////////////////////////////
-                      
-                            //route for home
+                            //COMPTEUR DE VUE 
+                            var userCount = 0;
+                            //ROUTE ARTICLE 
                             app.get('/articles_'+$random_id, (req, res) => {
+                              //VARIABLE URL
+                              var pathname = url.parse(req.url).pathname;
+                               if (pathname != "/favicon.ico") {
+                               userCount++;
+     
+                                }//FIN COMPTEUR DE VUE
       
       
       
                               
-                            //render file form.hbs
+                            //RENDER ARTICLE
                             res.render('ARTICLE/article_social_share_head.ejs',{
-                              //get value from textname
-                              video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville
+                              //GET VALUE ON ARTICLE PAGE
+                              userCount:userCount, video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville
                             });
 
 
