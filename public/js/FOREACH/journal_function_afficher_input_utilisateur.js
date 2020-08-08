@@ -231,7 +231,7 @@
         li_class_list_inline_item_3.appendChild(a_into_li_item_3);
 
         var li_class_fab_fa_facebook = document.createElement('li');
-        li_class_fab_fa_facebook.setAttribute('class', 'fab fa-facebook-f pr-1');
+        li_class_fab_fa_facebook.setAttribute('class', 'fas fa-video pr-1');
         a_into_li_item_3.appendChild(li_class_fab_fa_facebook);
 
         txt_into_a_2 = document.createTextNode('21');
@@ -247,7 +247,7 @@
         li_class_list_inline_item_4.appendChild(a_into_item_4);
 
         var i_class_fab_fa_twitter = document.createElement('li');
-        i_class_fab_fa_twitter.setAttribute('class', 'fab fa-twitter pr-1');
+        i_class_fab_fa_twitter.setAttribute('class', 'fas fa-camera pr-1');
         a_into_item_4.appendChild(i_class_fab_fa_twitter);
 
         var txt_into_a_4 = document.createTextNode('5');

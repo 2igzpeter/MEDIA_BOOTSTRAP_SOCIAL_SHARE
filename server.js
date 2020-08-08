@@ -382,12 +382,7 @@ app.post('/result',isLoggedIn, function(req, res) {
     
       //////////////////////////////////////////////////////////////////
       
-     //CREATE RANDOM ID
-     var id_int_random_post = Math.floor(Math.random() * 1000000000);
-     console.log("/////////////////////id_int_random_article: " + id_int_random_post);
-      var number_post = id_int_random_post;
-  
-    //////////////////////////////////////////////////////////////////
+    
   
                   var titre = [req.body.post_titre];
                   var image = [req.body.post_image];
@@ -414,7 +409,6 @@ app.post('/result',isLoggedIn, function(req, res) {
                   console.log("categorie: " + categorie)
                   console.log('reporter: ' + reporter)
                   console.log("id_login: " + id_login)
-                  console.log("number post:" + number_post)
                   console.log('continent: ' + continent)
                   console.log('pays: ' + pays)
                   console.log('region: ' + region)
@@ -426,7 +420,12 @@ app.post('/result',isLoggedIn, function(req, res) {
   
     
     function insertPost(titre, image, video, date, resume, socity, categorie, reporter, id_login, number_post, continent, pays, region,departement, ville, text_presentation){
-    
+     //CREATE RANDOM ID ARTICLE
+     var id_int_random_post = Math.floor(Math.random() * 1000000000);
+     console.log("/////////////////////id_int_random_article: " + id_int_random_post);
+      var number_post = id_int_random_post;
+  
+    //////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////
     
                   var titre = [req.body.post_titre];
@@ -470,7 +469,7 @@ app.post('/result',isLoggedIn, function(req, res) {
     
     //////////////////////////////////////////////////////////////////
                   
-                                        //CREATION DE LA ROUTE ARTICLE POUR MA FICHE ARTICLE
+                                        //CREATION DE LA ROUTE ARTICLE RANDOM POUR MA FICHE ARTICLE
                                         //AJOUTER UN ID POUR MA ROUTE
                                         //RANDOM ID
                                         //SQL INSERT URL ROUTE
@@ -518,9 +517,9 @@ app.post('/result',isLoggedIn, function(req, res) {
                                   
   
                                   app.get('/total_user_posts_img', function(req, resp){
-                                    console.log("WELCOME FROM THE ROAD TOTAL")
+                                    console.log("WELCOME FROM THE ROAD USER IMAGE")
                                     var sql = mysql.format("SELECT url_img FROM viewpost WHERE number_post=?  ", [number_post]);
-                                    
+                                    console.log(number_post);
                                     connection.query(sql, function(error, rows, fields){
                                     if(error){
                                     console.log('error');
