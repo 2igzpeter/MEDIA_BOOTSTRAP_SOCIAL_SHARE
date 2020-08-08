@@ -103,7 +103,7 @@
         }
       
         .card {
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: rgb(255, 255, 255);
         }
       
         .md-form label {
@@ -302,12 +302,12 @@
         
           <div class=" ">
             <!--Section: Content-->
-            <section class="heavy-rain-gradient dark-light-text">
+            <section class=" " style="background-color: #424f95;">
       
                 <!--Grid column-->
                 <div class="col-lg-12 ">
                      <!-- Title -->
-                     <h1 class=""><i class="fas fa-quote-left pr-2"></i> <a class="font-weight-bold"> <%= titre %></a> <i class="fas fa-quote-right pr-2"></i></h1>
+                     <h1 class="font-weight-bold deep-orange-lighter-hover mb-3"><i class="fas fa-quote-left pr-2"></i>  <%= titre %>  <i class="fas fa-quote-right pr-2"></i></h1>
                     <!-- Author -->
                     
                 </div>
@@ -371,38 +371,42 @@
 
           <!-- Preview Image -->
           <div id="container_iframe">
-            <iframe width="900" height="506" src="https://www.youtube.com/embed/iknsdj34LIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+            <iframe width="900" height="506" src="https://www.youtube.com/embed/iknsdj34LIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>    
           </div>
     
-          <hr>
-          
+          <hr><p class="mb-4  lead text-muted"><strong><i class="fas fa-quote-left "></i> <%= text_presentation %> <i class="fas fa-quote-right"></i></strong></p></br>
+         
           <!-- Post Content -->
             <p class="mb-0"><%= resume %></p></br>
-            <div class="container-fluid">
+
+            
+        
+          <!--FOOTER ARTICLE-->
+          <blockquote class="blockquote bq-warning">
+            <div class="container-fluid note note-warning">
               <div class="row">
                 
                 
                 <div class="col-sm-1">
-
                     <img src="images/anonymous_mask.png" style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle img-fluid">
                 </div>
-                  <div class="col-sm-1">
+
+                  <div class="col-sm">
                     <cite title="Source Title" class="blockquote-footer">Report by: <a href="/profile" class="titre-article"><%= reporter %></a>  </cite>
                   </div>
+
                   <div class="col-sm">
                     <cite title="Source Title" class="blockquote-footer">TV chain: <a href="/profile" class="titre-article"><%= socity %></a>  </cite>
                   </div>
+
                   <div class="col-sm">
                     <cite title="Source Title" class="blockquote-footer">Posted: <a href="#" class="titre-article"> <%=date %></a></cite>
-                  
-                </div>
+                  </div>
                
                 
               </div>
             </div>
-        
-
-          <blockquote class="blockquote ">
             <hr>
             <footer class=" ">
               <div class="container-fluid btn-elegant">
@@ -429,6 +433,7 @@
               </div>
             </footer>
           </blockquote>
+          <!--FOOTER ARTICLE-->
 
 
           <hr>
@@ -455,63 +460,52 @@
 
         </div><!--fin div col-8-->
 
+
+
+
+
+        
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4" style="min-width: ;">
+        <div class="col-md-4 " >
 
-          <!-- Categories Widget -->
-          <div class="card my-3">
-            <h5 class="card-header">Voir les autres posts de: <a href="/profile"> <%= socity %></a></h5>
-            <div class="card-body" style="min-height: 400px; width: 100%; min-width: auto; max-height: 600px; height: 100%; overflow: scroll;">
-              <div class="row" >
-                
-                      <div class="">
-                        <div class="col">
-                          <div class="row">
-                            <div class="col col-sm-12" >
-                                 <div id="id_container_lasted_posts" class="container-fluid"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-               
-               
+              <!-- Categories Widget -->
+              <div class="card my-4  btn-elegant"  >
+                <h5 class="card-header">Voir les autres posts de: <a href="/profile"> <%= socity %></a></h5>
+                <div class="card-body " style=" background-color: ;  min-height: 400px; width: 100%; min-width: auto; max-height: 600px; height: 100%; overflow: scroll;">
+                    <div id="id_container_lasted_posts" class=""></div>
+                </div>
               </div>
-            </div>
-          </div>
            
            
 
           
-          <div class="card my-4">
-            <h5 class="card-header">Images de l'article</h5>
-            <div class="card-body">
-             <!--Carousel Wrapper-->
-            <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-              <!--Indicators-->
-              <ol class="carousel-indicators">
-                <li data-target="#carousel-example-1z" data-slide-to="0" class="active" ></li>
-                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-              </ol>
-              <!--/.Indicators-->
-              <!--Slides-->
-              <div id="id_container_user_img" class="carousel-inner" role="listbox">
-               
-                
-              </div>
-              <!--/.Slides-->
-              <!--Controls-->
-              <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-              <!--/.Controls-->
-            </div>
-            <!--/.Carousel Wrapper-->
+          <div class="card my-4 btn-elegant">
+            <h5 class="card-header ">Images de l'article</h5>
+            <div class="card-body ">
+                <!--Carousel Wrapper-->
+                <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+                  <!--Indicators-->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active" ></li>
+                    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                  </ol>
+                  <!--/.Indicators-->
+                  <!--Slides-->
+                  <div id="id_container_user_img" class="carousel-inner" role="listbox"></div>
+                  
+                  <!--/.Slides-->
+                  <!--Controls-->
+                  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                  <!--/.Controls-->
+                </div>
+                <!--/.Carousel Wrapper-->
              
             </div>
           </div>
@@ -522,9 +516,9 @@
 
 
           <!-- Side Widget -->
-          <div class="card my-4">
+          <div class="card my-4 btn-elegant">
             <h5 class="card-header">Mes réseaux sociaux</h5>
-            <div class="card-body">
+            <div class="card-body ">
                             
               <!-- Add font awesome icons -->
               <a href="#" class="fa fa-facebook"></a>
@@ -577,45 +571,10 @@
                             <p>It includes rich features & contents. It's designed & developed based on One Page/ Multi-page Layout,blog themes,world press themes and blogspot. You can use any layout from any demo anywhere.</p>
                             <p>webblogoverflow is completely creative, clean & 100% responsive website. Put your business into next level with Webublogoverflow.</p>
                         </div>
-                        <div class="kilimanjaro_part m-top-15">
-                            <h5>Social Links</h5>
-                            <ul class="kilimanjaro_social_links">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
-                                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
-                            </ul>
-                        </div>
+                        
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="kilimanjaro_part">
-                            <h5>Tags Widget</h5>
-                            <ul class=" kilimanjaro_widget">
-                                <li><a href="#">Classy</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Creative</a></li>
-                                <li><a href="#">One Page</a></li>
-                                <li><a href="#">Multipurpose</a></li>
-                                <li><a href="#">Minimal</a></li>
-                                <li><a href="#">Classic</a></li>
-                                <li><a href="#">Medical</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="kilimanjaro_part m-top-15">
-                            <h5>Important Links</h5>
-                            <ul class="kilimanjaro_links">
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms & Conditions</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About Licences</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Help & Support</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Careers</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Community & Forum</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3">
+                    
+                    <div class="col-6 col-md-6 col-lg-6">
                         <div class="kilimanjaro_part">
                             <h5>Latest News</h5>
                             <div class="kilimanjaro_blog_area">
@@ -704,15 +663,18 @@
 
               //DIV 
               var div_col_lg_6 = document.createElement('div');
-              div_col_lg_6.setAttribute('class', ' col-md-12 col-lg-12 col-sm-12  align-item-stretch');
+              div_col_lg_6.setAttribute('class', '   waves-effect waves-light ');
+              div_col_lg_6.setAttribute('style', 'background-color:');
               container_view_post.appendChild(div_col_lg_6);
 
               var div_class_card = document.createElement('div');
-              div_class_card.setAttribute('class', 'card');
+              div_class_card.setAttribute('class', ' card ');
+              div_class_card.setAttribute('style', 'background-color:');
               div_col_lg_6.appendChild(div_class_card);
 
               var div_card_body_m1 = document.createElement('div');
               div_card_body_m1.setAttribute('class', 'card-body ');
+              div_card_body_m1.setAttribute('style', 'background-color:;');
               div_class_card.appendChild(div_card_body_m1);
 
               var div_row_mb_4 = document.createElement('div');
@@ -724,7 +686,7 @@
               div_row_mb_4.appendChild(div_col_lg_4);
 
               var div_avatar = document.createElement('div');
-              div_avatar.setAttribute('class','avatar w-100 white d-flex justify-content-center align-items-center');
+              div_avatar.setAttribute('class','avatar w-100 btn-elegant d-flex justify-content-center align-items-center');
               div_col_lg_4.appendChild(div_avatar);
 
               var img_avatar = document.createElement('img');
@@ -745,6 +707,7 @@
 
 
             var balise_strong_into_p_mb_1_1 = document.createElement('strong');
+            balise_strong_into_p_mb_1_1.setAttribute( 'class','text-warning');
             p_mb_1_1.appendChild(balise_strong_into_p_mb_1_1);
 
             var txt_balise_strong = document.createTextNode(viewPost.titre_article);
@@ -907,7 +870,7 @@
 
         var img_2 = document.createElement('img');
         img_2.setAttribute('class', 'd-block w-100');
-        img_2.setAttribute('src', viewPost.url_img);
+        img_2.setAttribute('src', 'https://ak.picdn.net/shutterstock/videos/9154238/thumb/1.jpg');
         img_2.setAttribute('alt', 'second-slide');
         div_class_carousel_item_2.appendChild(img_2);
 

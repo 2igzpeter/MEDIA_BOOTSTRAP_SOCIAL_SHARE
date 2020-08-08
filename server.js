@@ -414,6 +414,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   console.log("categorie: " + categorie)
                   console.log('reporter: ' + reporter)
                   console.log("id_login: " + id_login)
+                  console.log("number post:" + number_post)
                   console.log('continent: ' + continent)
                   console.log('pays: ' + pays)
                   console.log('region: ' + region)
@@ -424,7 +425,7 @@ app.post('/result',isLoggedIn, function(req, res) {
     
   
     
-    function insertPost(titre, image, video, date, resume, socity, categorie, reporter, id_login, continent, pays, region,departement, ville, text_presentation){
+    function insertPost(titre, image, video, date, resume, socity, categorie, reporter, id_login, number_post, continent, pays, region,departement, ville, text_presentation){
     
     //////////////////////////////////////////////////////////////////
     
@@ -437,6 +438,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   var categorie= [req.body.post_categorie];
                   var reporter = [req.body.post_reporter];
                   var id_login = [req.user.id];
+                  var number_post =id_int_random_post ;
                   var continent = [req.body.post_continent];
                   var pays = [req.body.post_pays];
                   var region = [req.body.post_region];
@@ -444,6 +446,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   var ville = [req.body.post_ville]; 
                   var hello_world = ["hello_world"];
                   var text_presentation = [req.body.post_presentation];
+
                   
     
                   console.log("titre: " + titre)
@@ -456,6 +459,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   console.log("categorie: " + categorie)
                   console.log("reporter: "+ reporter)
                   console.log("id_login: " + id_login)
+                  console.log("number post" + number_post)
                   console.log('continent: ' + continent)
                   console.log('region: ' + region)
                   console.log('departement:' + departement)
@@ -569,6 +573,17 @@ app.post('/result',isLoggedIn, function(req, res) {
                                userCount++;
      
                                 }//FIN COMPTEUR DE VUE
+                                //VARIABLE INSERT NBR VUE INTO TABLE VIEWPOST
+                                var sql = "INSERT INTO `viewpost` (`nbr_vues`) VALUES (?) ";
+
+                                //CONNEXION DATABASE & INSERT VARIABLE USERCOUNT
+                                connection.query(sql, [userCount, $random_id], function (err, result) {
+                                  
+                                          
+                              // console.log(err);
+                                if (err) throw err;
+                                console.log("//////////////////////////////////////////////NEW VUES INSERT INTO TABLE VIEWPOST");
+                              });
       
       
       
@@ -576,7 +591,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                             //RENDER ARTICLE
                             res.render('ARTICLE/article_social_share_head.ejs',{
                               //GET VALUE ON ARTICLE PAGE
-                              userCount:userCount, video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville
+                              userCount:userCount, video:video, image:image, date:date, titre:titre, resume:resume, reporter:reporter, socity:socity, categorie:categorie, continent:continent, pays:pays, region:region, departement:departement, ville: ville, text_presentation
                             });
 
 
@@ -682,35 +697,7 @@ app.post('/result',isLoggedIn, function(req, res) {
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  
   
- app.get('/my_posts', isLoggedIn, function(req, res){
-
  
-  res.render('PROFILE/my_posts.ejs',  {
-   user:req.user,
-   user_id: req.user.id
-  });
-  var user_id = req.user.id;
-
-//////////////////////////////////////////////////////////////////
-app.get('/call_posts' , function(req, resp){
-  console.log("WELCOME FROM THE ROAD USER POSTS");
-  var sql = mysql.format("SELECT * FROM viewpost WHERE users = ? ", [user_id]);
-  
-  connection.query(sql, function(error, rows, fields){
-  if(error){
-  console.log('error');
-  }else{
-  console.log('successful\n');
-  console.log(rows);
-  console.log(" commance sql : " +sql);
-  resp.send(rows);
-  }
-  })
-  })
-//////////////////////////////////////////////////////////////////
-  
- });
-
  //ROAD TO PROFILE
  app.get('/profile/my_posts', isLoggedIn,(req, res) => {
  
@@ -720,19 +707,19 @@ app.get('/call_posts' , function(req, resp){
    //RESPONSE RENDER FUNCTION(VIEW .EJS, {CLEF VALEUR USER OBJET})
    res.render('PROFILE/my_posts.ejs',{user:req.user});
  
-   //VARIABLE VALUES DEFINITION REQ USER ID = FOREING KEY
+    //VARIABLE VALUES DEFINITION REQ USER ID = FOREING KEY
     values= req.user.id;
    
  
     console.log("/////////////////////////////////////////////////////////////REQ USER: ")
     //SHOW USER REQ .USER.
     console.log(req.user)
-   //SHOW VARIABLE VALUES
-   console.log("////////////////////////////////////////////////////values : " + values)
-   //FILTER VIEW ROAD FROM BDD 
-   console.log(" ///////////////////////////////////////////////////User_id: " + req.user.id)
-   //FILTER VIEW VALUE
-   console.log("////////////////////////////////////////////////////VALEUR FOREINK: "+values);
+    //SHOW VARIABLE VALUES
+    console.log("////////////////////////////////////////////////////values : " + values)
+    //FILTER VIEW ROAD FROM BDD 
+    console.log(" ///////////////////////////////////////////////////User_id: " + req.user.id)
+    //FILTER VIEW VALUE
+    console.log("////////////////////////////////////////////////////VALEUR FOREINK: "+values);
  
       
    app.get('/filterView', function(req, resp){

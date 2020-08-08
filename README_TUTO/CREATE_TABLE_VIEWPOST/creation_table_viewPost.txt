@@ -19,7 +19,8 @@ CREATE TABLE viewpost (
     departement VARCHAR (1000) NULL,
     ville VARCHAR (1000) NULL,
     helloWorld VARCHAR (1000) NULL,
-    text_presentation VARCHAR (1000) NULL,	
+    text_presentation VARCHAR (1000) NULL,
+    nbr_users VARCHAR (1000) NULL,
     
     PRIMARY KEY (id)
 )
