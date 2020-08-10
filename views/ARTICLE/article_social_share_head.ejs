@@ -307,7 +307,7 @@
                 <!--Grid column-->
                 <div class="col-lg-12 ">
                      <!-- Title -->
-                     <h1 class="font-weight-bold deep-orange-lighter-hover mb-3"><i class="fas fa-quote-left pr-2"></i>  <%= titre %>  <i class="fas fa-quote-right pr-2"></i></h1>
+                     <h1 class="font-weight-bold text-warning mb-3"><i class="fas fa-quote-left  pr-2"></i>  <%= titre %>  <i class="fas fa-quote-right pr-2"></i></h1>
                     <!-- Author -->
                     
                 </div>
@@ -336,8 +336,6 @@
         
         
           </div>
-
-
 
 
           
@@ -371,16 +369,25 @@
 
           <!-- Preview Image -->
           <div id="container_iframe">
-            <iframe width="900" height="506" src="https://www.youtube.com/embed/iknsdj34LIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <iframe width="900" height="506" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src=<%= video %> >
             </iframe>    
           </div>
     
-          <hr><p class="mb-4  lead text-muted"><strong><i class="fas fa-quote-left "></i> <%= text_presentation %> <i class="fas fa-quote-right"></i></strong></p></br>
+          <hr></br>
          
           <!-- Post Content -->
-            <p class="mb-0"><%= resume %></p></br>
-
-            
+        
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6" >
+                  <p class="mb-4  lead text-muted"><%= resume %></p></br>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                  <p class="mb-4  lead text-muted"><strong><i class="fas fa-quote-left "></i> <%= text_presentation %> <i class="fas fa-quote-right"></i></strong></p></br>
+                </div>
+              </div>
+            </div>
+           
         
           <!--FOOTER ARTICLE-->
           <blockquote class="blockquote bq-warning">
@@ -463,7 +470,7 @@
 
 
 
-
+      
         
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4 " >
@@ -482,17 +489,30 @@
           <div class="card my-4 btn-elegant" style="height: 400px;">
             <h5 class="card-header ">Images de l'article</h5>
             <div class="card-body ">
+                                        
                 <!--Carousel Wrapper-->
                 <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
                   <!--Indicators-->
                   <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active" ></li>
-                    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-1z" data-slide-to="1" class=""></li>
                   </ol>
                   <!--/.Indicators-->
                   <!--Slides-->
-                  <div id="id_container_user_img" class="carousel-inner" role="listbox"></div>
-                  
+                  <div class="carousel-inner" role="listbox">
+                    
+                    <!--first slide-->
+                    <div class="carousel-item active"><a target="_blank" href = <%= image %> >
+                      <img class="d-block w-100" width="400px" height="300px" src=<%= image %> ></a>
+                    </div>
+                    <!--/first slide-->
+                    <!--Second slide-->
+                    <div class="carousel-item "><a target="_blank" href="https://images.alphacoders.com/260/thumb-1920-260141.jpg">
+                      <img class="d-block w-100" width="400px" height="300px" src="https://images.alphacoders.com/260/thumb-1920-260141.jpg" ></a>
+                    </div>
+                    <!--/Second slide-->
+                    
+                  </div>
                   <!--/.Slides-->
                   <!--Controls-->
                   <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
