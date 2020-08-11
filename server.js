@@ -419,7 +419,7 @@ app.post('/result',isLoggedIn, function(req, res) {
     
   
     
-    function insertPost(titre, image, video, date, resume, socity, categorie, reporter, id_login, number_post, continent, pays, region,departement, ville, text_presentation){
+    function insertPost(titre, image, video, date, resume, socity, categorie, reporter, id_login, number_post, continent, pays, region,departement, ville, text_presentation, nbr_vues){
      //CREATE RANDOM ID ARTICLE
      var id_int_random_post = Math.floor(Math.random() * 1000000000);
      console.log("/////////////////////id_int_random_article: " + id_int_random_post);
@@ -445,6 +445,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   var ville = [req.body.post_ville]; 
                   var hello_world = ["hello_world"];
                   var text_presentation = [req.body.post_presentation];
+                  var nbr_vues = "0";
 
                   
     
@@ -465,6 +466,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                   console.log('ville:' + ville)
                   console.log('hello world:' + hello_world)
                   console.log('text presentation:' + text_presentation)
+                  console.log('nombre de vues' + nbr_vues)
     
     
     //////////////////////////////////////////////////////////////////
@@ -491,12 +493,12 @@ app.post('/result',isLoggedIn, function(req, res) {
   
   
   
-                      var sql = "INSERT INTO `viewpost` (`titre_article`, `url_post`, `url_img`, `url_video`, `date_sortie`, `description_article`, `name_chaine`,`pays`,`categorie`, `name_reporter`,`users` ,`number_post`,`continent`,`region`,`departement`,`ville`,`helloWorld`,`text_presentation`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                      var sql = "INSERT INTO `viewpost` (`titre_article`, `url_post`, `url_img`, `url_video`, `date_sortie`, `description_article`, `name_chaine`,`pays`,`categorie`, `name_reporter`,`users` ,`number_post`,`continent`,`region`,`departement`,`ville`,`helloWorld`,`text_presentation`,`nbr_vues`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
           
           
     
     
-                         connection.query(sql, [titre, url_id_article, image, video, date, resume, socity, pays, categorie, reporter, id_login, number_post, continent, region, departement, ville, hello_world, text_presentation], function (err, result) {
+                         connection.query(sql, [titre, url_id_article, image, video, date, resume, socity, pays, categorie, reporter, id_login, number_post, continent, region, departement, ville, hello_world, text_presentation, nbr_vues], function (err, result) {
     
             
                         // console.log(err);
@@ -506,62 +508,14 @@ app.post('/result',isLoggedIn, function(req, res) {
                         });
     
             
-                        console.log(req.body.post_socity, req.body.post_image, req.body.post_video, req.body.post_resume, req.body.post_titre, req.body.post_categorie, req.body.post_reporter, req.user.id, number_post, continent, pays, region, departement, ville, hello_world, text_presentation)
+                        console.log(req.body.post_socity, req.body.post_image, req.body.post_video, req.body.post_resume, req.body.post_titre, req.body.post_categorie, req.body.post_reporter, req.user.id, number_post, continent, pays, region, departement, ville, hello_world, text_presentation, nbr_vues)
             
                         //console.log(newPostInsert())
   
   
                                     //////////////////////////////////////////////////////////////////
   
-                                  //////////////////////////////////////////////////////////////////
-                                  
-  
-                                  app.get('/total_user_posts_img', function(req, resp){
-                                    console.log("WELCOME FROM THE ROAD USER IMAGE")
-                                    var sql = mysql.format("SELECT url_img FROM viewpost WHERE number_post=?  ", [number_post]);
-                                    console.log(number_post);
-                                    connection.query(sql, function(error, rows, fields){
-                                    if(error){
-                                    console.log('error');
-                                    }else{
-                                    console.log('successful\n');
-                                    console.log(rows);
-                                    console.log("////////////////////////////////////////////////////////////////////////////////////////////LES DATAS POSTS IMG :"+rows);
-                                    console.log(" /////////////////////////////////////////////////////////////////////////////////////////////commance sql : " +sql);
-                                    console.log(" //////////////////////////////////////////////////////////////////////ROUTE IMG POST: " + number_post);
-                                    resp.send(rows);
-                                    }
-                                    })
-                                    })
-      
-  
-  
-                              //////////////////////////////////////////////////////////////////
-  
-  
-                              app.get('/total_user_posts', function(req, resp){
-                                console.log("WELCOME FROM THE ROAD TOTAL")
-                                var sql = mysql.format("SELECT * FROM viewpost WHERE users=? ", [id_login]);
-                                
-                                connection.query(sql, function(error, rows, fields){
-                                if(error){
-                                console.log('error');
-                                }else{
-                                console.log('successful\n');
-                                console.log(rows);
-                                console.log("////////////////////////////////////////////////////////////////////////////////////////////LES DATAS USER POSTS :");
-                                console.log(" /////////////////////////////////////////////////////////////////////////////////////////////commance sql : " +sql);
-                                console.log(" //////////////////////////////////////////////////////////////////////ROUTE TOTAL USER POSTS CREATED: " + id_login);
-                                resp.send(rows);
-                                }
-                                })
-                                })
-                                
-  
-  
-                            //////////////////////////////////////////////////////////////////
-  
-                            //////////////////////////////////////////////////////////////////
+                                 
                             //COMPTEUR DE VUE 
                             var userCount = 0;
                             //ROUTE ARTICLE 
@@ -573,19 +527,101 @@ app.post('/result',isLoggedIn, function(req, res) {
      
                                 }//FIN COMPTEUR DE VUE
                                 //VARIABLE INSERT NBR VUE INTO TABLE VIEWPOST
-                                var sql = "INSERT INTO `viewpost` (`nbr_vues`) VALUES (?) ";
+                                connection.query('UPDATE `viewpost` SET nbr_vues=? WHERE `number_post` = ?', [userCount, number_post], function (err, results) {
+                                  if (!err) {
+                                    console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////nbr_vues updated");
+                                  } else {
+                                    console.log(err);
+                                  }
+                                })
+                                
+                                      //////////////////////////////////////////////////////////////////
+        
+        
+                                    app.get('/total_user_posts', function(req, resp){
+                                      console.log("WELCOME FROM THE ROAD TOTAL")
+                                      var sql = mysql.format("SELECT * FROM viewpost WHERE users=? ", [id_login]);
+                                      
+                                      connection.query(sql, function(error, rows, fields){
+                                      if(error){
+                                      console.log('error');
+                                      }else{
+                                      console.log('successful\n');
+                                      console.log(rows);
+                                      console.log("////////////////////////////////////////////////////////////////////////////////////////////LES DATAS USER POSTS :");
+                                      console.log(" /////////////////////////////////////////////////////////////////////////////////////////////commance sql : " +sql);
+                                      console.log(" //////////////////////////////////////////////////////////////////////ROUTE TOTAL USER POSTS CREATED: " + id_login);
+                                      resp.send(rows);
+                                      }
+                                      })
+                                      })
+                                      
+        
+        
+                                  //////////////////////////////////////////////////////////////////
+                                  //////////////////////////////////////////////////////////////////
+                                  app.get('/call_article_comments' , function(req, resp){
+                                    console.log("WELCOME FROM THE ROAD COMMENTS")
+                                    var sql = mysql.format("SELECT * FROM article_comments WHERE id_article = ? ", [$random_id]);
+                                    
+                                    connection.query(sql, function(error, rows, fields){
+                                    if(error){
+                                    console.log('error');
+                                    }else{
+                                    console.log('successful\n');
+                                    console.log(rows);
+                                    console.log("LES DATAS COMMENTS :");
+                                    console.log(" commance sql : " +sql);
+                                    resp.send(rows);
+                                    }
+                                    })
+                                    })
+                                    
+                                  //////////////////////////////////////////////////////////////////
 
-                                //CONNEXION DATABASE & INSERT VARIABLE USERCOUNT
-                                connection.query(sql, [userCount, $random_id], function (err, result) {
-                                  
-                                          
-                              // console.log(err);
-                                if (err) throw err;
-                                console.log("//////////////////////////////////////////////NEW VUES INSERT INTO TABLE VIEWPOST");
-                              });
-      
-      
-      
+
+
+                                    //////////////////////////////////////////////////////////////////
+                                                                
+                                    app.post('/article_comments', function(req, resp){
+                                      console.log("WELCOME TO ARTICLE COMMENTS POST");
+                                      //CATCH DATA ARTICLE COMMENTS
+                                      var recup_comments_value_article = req.body.post_comments;
+                                      //VARIABLE NEW DATE COMMENT
+                                      var date_user_comment = new Date();
+                                      console.log("/////////////////////////////////////////USER COMMENT DATE: " + date);
+
+                                      
+                                          //CONSOLE LOG DATA
+                                          console.log(recup_comments_value_article);
+
+                                          //VARIABLE INSERT
+                                          var sql = "INSERT INTO `article_comments` (`comments`, `id_article`, `date_comment`) VALUES (?,?,?)";
+
+                                          //CONNEXION DATABASE
+                                          connection.query(sql, [recup_comments_value_article, $random_id, date_user_comment], function (err, result) {
+                                            
+                                                    
+                                        // console.log(err);
+                                          if (err) throw err;
+                                          console.log("//////////////////////////////////////////////NEW COMMENT INSERT INTO TABLE COMMENTS");
+                                          console.log('SERVER ARTICLES COMMENTS IS OK! /////////////////////////////////////////////////////////');
+                                        });
+
+
+
+
+
+                                            
+                                      
+
+
+                                      
+                                        resp.redirect('/articles_'+$random_id);
+                                      });
+
+
+                                          //////////////////////////////////////////////////////////////////
                               
                             //RENDER ARTICLE
                             res.render('ARTICLE/article_social_share_head.ejs',{
@@ -594,69 +630,7 @@ app.post('/result',isLoggedIn, function(req, res) {
                             });
 
 
-                            //////////////////////////////////////////////////////////////////
-                            app.get('/call_article_comments' , function(req, resp){
-                              console.log("WELCOME FROM THE ROAD COMMENTS")
-                              var sql = mysql.format("SELECT * FROM article_comments WHERE id_article = ? ", [$random_id]);
-                              
-                              connection.query(sql, function(error, rows, fields){
-                              if(error){
-                              console.log('error');
-                              }else{
-                              console.log('successful\n');
-                              console.log(rows);
-                              console.log("LES DATAS COMMENTS :");
-                              console.log(" commance sql : " +sql);
-                              resp.send(rows);
-                              }
-                              })
-                              })
-                              
-                            //////////////////////////////////////////////////////////////////
-
-
-
-                              //////////////////////////////////////////////////////////////////
-                                                          
-                              app.post('/article_comments', function(req, resp){
-                                console.log("WELCOME TO ARTICLE COMMENTS POST");
-                                //CATCH DATA ARTICLE COMMENTS
-                                var recup_comments_value_article = req.body.post_comments;
-                                //VARIABLE NEW DATE COMMENT
-                                var date_user_comment = new Date();
-                                console.log("/////////////////////////////////////////USER COMMENT DATE: " + date);
-
-                                
-                                    //CONSOLE LOG DATA
-                                    console.log(recup_comments_value_article);
-
-                                    //VARIABLE INSERT
-                                    var sql = "INSERT INTO `article_comments` (`comments`, `id_article`, `date_comment`) VALUES (?,?,?)";
-
-                                    //CONNEXION DATABASE
-                                    connection.query(sql, [recup_comments_value_article, $random_id, date_user_comment], function (err, result) {
-                                      
-                                              
-                                  // console.log(err);
-                                    if (err) throw err;
-                                    console.log("//////////////////////////////////////////////NEW COMMENT INSERT INTO TABLE COMMENTS");
-                                    console.log('SERVER ARTICLES COMMENTS IS OK! /////////////////////////////////////////////////////////');
-                                  });
-
-
-
-
-
-                                       
-                                
-
-
-                                
-                                  resp.redirect('/articles_'+$random_id);
-                                });
-
-
-                                    //////////////////////////////////////////////////////////////////
+                          
 
 
                           });

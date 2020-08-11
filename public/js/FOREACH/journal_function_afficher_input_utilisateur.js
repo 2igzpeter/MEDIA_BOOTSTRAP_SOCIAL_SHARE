@@ -91,10 +91,12 @@
           video_journal.setAttribute('id', 'video_journal');
           video_journal.setAttribute('style', 'height: 400px ');
           div_class_single_news.appendChild(video_journal);
+          div_iframe = document.createElement('iframe');
+          div_iframe.setAttribute('class', '');
+          div_iframe.setAttribute('style', 'width:100%; height:100%;');
+          div_iframe.setAttribute('src', news.url_video);
 
-         var video_insert = "<iframe id='iframe' style='width:100%; height:100%;' src='https://www.youtube.com/embed/6uk1d9Els-A?rel=0&amp;autoplay=1&mute=1&autoplay=1&loop=1&amp;hl=fr&amp;cc_lang_pref=fr&amp;cc_load_policy=1' frameborder='0' allow='accelerometer;autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen ></iframe>";
-         video_journal.innerHTML=video_insert;
-        
+          video_journal.appendChild(div_iframe);
 
          var div_class_new_data = document.createElement('div');
          div_class_new_data.setAttribute('class', 'news-data d-flex justify-content-between');
@@ -122,7 +124,7 @@
          i_class_far_fa_eye.setAttribute('class', 'far fa-eye pr-2');
          p_class_font_weight.appendChild(i_class_far_fa_eye);
 
-         var txt_p_class_font = document.createTextNode('3456');
+         var txt_p_class_font = document.createTextNode(news.nbr_vues);
          p_class_font_weight.appendChild(txt_p_class_font);
 
          var p_class_font_weight_2 = document.createElement('p');

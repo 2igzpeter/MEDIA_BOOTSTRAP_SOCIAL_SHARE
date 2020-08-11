@@ -244,8 +244,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top scrolling-navbar ">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <strong>MDB</strong>
+        <a class="navbar-brand" href="/">
+          <strong>Média libre.com</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -316,17 +316,20 @@
                       <div class="container-fluid ">
                         <div class="row">
                           <div class="col-sm-1">
-                            <img src="images/icon_anonymous.png" style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle z-depth-1 img-fluid">
+                            <img  style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle z-depth-1 img-fluid" src=<%= image %>>
                           </div>
-                          <div class="col-sm-9">
+                          <div class="col">
                                 <!--Content-->
                                 <p class="lead">
                                   by
-                                  <a href="/profile"><%= socity %></a>
+                                  <a href="/profile" class="text-danger"><%= socity %></a>
                                 </p>       
                           </div>
-                          <div class="col-sm-2">
-                            <button type="button" class="btn aqua-gradient">Suivre</button>
+                          <div class="col">
+                            <button class="btn btn-primary"><i class="far fa-thumbs-up mr-1"></i> J'aime cet article</button>
+                          </div>
+                          <div class="col">
+                            <button class="btn btn-primary"><i class="fas fa-share mr-1"></i> Suivre ce journaliste</button>
                           </div>
                         </div>
                       </div>
@@ -396,7 +399,7 @@
                 
                 
                 <div class="col-sm-1">
-                    <img src="images/anonymous_mask.png" style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle img-fluid">
+                  <img  style="width: 50px; min-width: 50px; min-height: 50px; height: 50px;" class="rounded-circle z-depth-1 img-fluid" src=<%= image %>>
                 </div>
 
                   <div class="col-sm">
@@ -475,16 +478,7 @@
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4 " >
 
-              <!-- Categories Widget -->
-              <div class="card my-4  btn-elegant"  >
-                <h5 class="card-header">Voir les autres posts de: <a href="/profile"> <%= socity %></a></h5>
-                <div class="card-body " style=" background-color: ;  min-height: 400px; width: 100%; min-width: auto; max-height: 600px; height: 100%; overflow: scroll;">
-                    <div id="id_container_lasted_posts" class=""></div>
-                </div>
-              </div>
-           
-           
-
+              
           
           <div class="card my-4 btn-elegant" style="height: 400px;">
             <h5 class="card-header ">Images de l'article</h5>
@@ -531,6 +525,15 @@
           </div>
 
 
+            <!-- Categories Widget -->
+            <div class="card my-4  btn-elegant"  >
+              <h5 class="card-header">Voir les autres posts de: <a href="/profile"> <%= socity %></a></h5>
+              <div class="card-body " style=" background-color: ;  min-height: 400px; width: 100%; min-width: auto; max-height: 600px; height: 100%; overflow: scroll;">
+                  <div id="id_container_lasted_posts" class=""></div>
+              </div>
+            </div>
+         
+         
 
 
 
@@ -751,7 +754,7 @@
           button_link_post.setAttribute('href', viewPost.url_post);
           button_link_post.setAttribute('target', '_blank');
           div_card_body_m1.appendChild(button_link_post);
-          var txt_button_link_post = document.createTextNode('See reaction');
+          var txt_button_link_post = document.createTextNode('Voir les réactions');
           button_link_post.appendChild(txt_button_link_post);
 
           //FOOTER
@@ -792,11 +795,11 @@
 
           //I DANS A
           var i_class_far_fa_comments =document.createElement('i');
-          i_class_far_fa_comments.setAttribute('class', 'fas fa-video pr-1');
+          i_class_far_fa_comments.setAttribute('class', 'fas fa-eye');
           a_class_white_text.appendChild(i_class_far_fa_comments);
 
           //TEXT DANS A
-          var txt_link = document.createTextNode('12');
+          var txt_link = document.createTextNode(" " +viewPost.nbr_vues);
           a_class_white_text.appendChild(txt_link);
 
           //LI DANS UL
@@ -811,11 +814,11 @@
 
           //I DANS A 2
           var i_class_fab_fa_facebook = document.createElement('li');
-          i_class_fab_fa_facebook.setAttribute('class', 'far fa-comments pr-1');
+          i_class_fab_fa_facebook.setAttribute('class', 'fas fa-camera pr-1');
           a_class_white_text_2.appendChild(i_class_fab_fa_facebook);
 
           //TEXT DANS A 2
-          var text_into_a_2 = document.createTextNode('21');
+          var text_into_a_2 = document.createTextNode('2');
           a_class_white_text_2.appendChild(text_into_a_2);
 
           //LI DANS UL
