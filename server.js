@@ -88,8 +88,8 @@ require('./app/routes.js')(app, passport, url);
 /////////////////////////////////////////////////////////////////////////
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "peter",
+  password: "protekyanek",
   database: "nodejs_login"
  });
 ////////////////////////////////////////////////////////////////////////////
@@ -459,14 +459,14 @@ app.post('/result',isLoggedIn, function(req, res) {
                   console.log("categorie: " + categorie)
                   console.log("reporter: "+ reporter)
                   console.log("id_login: " + id_login)
-                  console.log("number post" + number_post)
+                  console.log("number post:" + number_post)
                   console.log('continent: ' + continent)
                   console.log('region: ' + region)
                   console.log('departement:' + departement)
                   console.log('ville:' + ville)
                   console.log('hello world:' + hello_world)
                   console.log('text presentation:' + text_presentation)
-                  console.log('nombre de vues' + nbr_vues)
+                  console.log('nombre de vues:' + nbr_vues)
     
     
     //////////////////////////////////////////////////////////////////
