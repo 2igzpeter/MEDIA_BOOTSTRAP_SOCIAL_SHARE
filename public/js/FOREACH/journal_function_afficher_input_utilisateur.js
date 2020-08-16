@@ -6,6 +6,7 @@
     document.getElementById("id_container_journal").innerHTML = "";
 
       tableauNews.forEach(function (news) {
+
         var div_class_container_my_5 = document.createElement('div');
         div_class_container_my_5.setAttribute('class', 'container my-5');
         id_container_journal.appendChild(div_class_container_my_5);
@@ -59,18 +60,7 @@
         var txt_balise_a = document.createTextNode(news.name_chaine);
         balise_a.appendChild(txt_balise_a);
 
-        var div_class_col_sm_2 = document.createElement('div');
-        div_class_col_sm_2.setAttribute('class', 'col-sm-2');
-        div_class_row.appendChild(div_class_col_sm_2);
-
-        var btn_class_aqua_gradient = document.createElement('button');
-        btn_class_aqua_gradient.setAttribute('class', 'btn aqua-gradient');
-        btn_class_aqua_gradient.setAttribute('type', 'button');
-        div_class_col_sm_2.appendChild(btn_class_aqua_gradient);
-
-        var  txt_btn_aqua = document.createTextNode('Suivre');
-        btn_class_aqua_gradient.appendChild(txt_btn_aqua);
-
+        
         var div_class_row_2 = document.createElement('div');
         div_class_row_2.setAttribute('class','row');
         balise_section.appendChild(div_class_row_2);
@@ -196,16 +186,7 @@
         ul_class_list_unstyled.setAttribute('class', 'list-unstyled list-inline font-small');
         div_class_rounded_bottom_2.appendChild(ul_class_list_unstyled);
 
-        var li_class_list_inline_item = document.createElement('li');
-        li_class_list_inline_item.setAttribute('class', 'list-inline-item pr-2 white-text');
-        ul_class_list_unstyled.appendChild(li_class_list_inline_item);
-
-        var li_class_far_fa_clock = document.createElement('li');
-        li_class_far_fa_clock.setAttribute('class', 'far fa-clock pr-1');
-        li_class_list_inline_item.appendChild(li_class_far_fa_clock);
-
-        var date_article = document.createTextNode(news.date_sortie);
-        li_class_list_inline_item.appendChild(date_article);
+       
 
         var li_class_list_inline_item_2 = document.createElement('li');
         li_class_list_inline_item_2.setAttribute('class', 'list-inline-item');

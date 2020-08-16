@@ -6,7 +6,6 @@ function evenement(){
 function afficherEvent(tableauDeFilms) {
     tableauDeFilms.forEach(function (news) {
 
-
       var div_class_container_my_5 = document.createElement('div');
       div_class_container_my_5.setAttribute('class', 'container my-5');
       id_container_journal.appendChild(div_class_container_my_5);
@@ -37,7 +36,7 @@ function afficherEvent(tableauDeFilms) {
 
       var img_class_rounded_circle = document.createElement('img');
       img_class_rounded_circle.setAttribute('class', 'rounded-circle z-depth-1 img-fluid');
-      img_class_rounded_circle.setAttribute('src', 'images/icon_anonymous.png');
+      img_class_rounded_circle.setAttribute('src', news.url_img);
       img_class_rounded_circle.setAttribute('style', 'width: 50px; min-width: 50px; min-height: 50px; height: 50px;');
       div_class_col_sm_1.appendChild(img_class_rounded_circle);
 
@@ -60,18 +59,7 @@ function afficherEvent(tableauDeFilms) {
       var txt_balise_a = document.createTextNode(news.name_chaine);
       balise_a.appendChild(txt_balise_a);
 
-      var div_class_col_sm_2 = document.createElement('div');
-      div_class_col_sm_2.setAttribute('class', 'col-sm-2');
-      div_class_row.appendChild(div_class_col_sm_2);
-
-      var btn_class_aqua_gradient = document.createElement('button');
-      btn_class_aqua_gradient.setAttribute('class', 'btn aqua-gradient');
-      btn_class_aqua_gradient.setAttribute('type', 'button');
-      div_class_col_sm_2.appendChild(btn_class_aqua_gradient);
-
-      var  txt_btn_aqua = document.createTextNode('Suivre');
-      btn_class_aqua_gradient.appendChild(txt_btn_aqua);
-
+      
       var div_class_row_2 = document.createElement('div');
       div_class_row_2.setAttribute('class','row');
       balise_section.appendChild(div_class_row_2);
@@ -92,10 +80,12 @@ function afficherEvent(tableauDeFilms) {
         video_journal.setAttribute('id', 'video_journal');
         video_journal.setAttribute('style', 'height: 400px ');
         div_class_single_news.appendChild(video_journal);
+        div_iframe = document.createElement('iframe');
+        div_iframe.setAttribute('class', '');
+        div_iframe.setAttribute('style', 'width:100%; height:100%;');
+        div_iframe.setAttribute('src', news.url_video);
 
-       var video_insert = "<iframe id='iframe' style='width:100%; height:100%;' src='https://www.youtube.com/embed/6uk1d9Els-A?rel=0&amp;autoplay=1&mute=1&autoplay=1&loop=1&amp;hl=fr&amp;cc_lang_pref=fr&amp;cc_load_policy=1' frameborder='0' allow='accelerometer;autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen ></iframe>";
-       video_journal.innerHTML=video_insert;
-      
+        video_journal.appendChild(div_iframe);
 
        var div_class_new_data = document.createElement('div');
        div_class_new_data.setAttribute('class', 'news-data d-flex justify-content-between');
@@ -123,7 +113,7 @@ function afficherEvent(tableauDeFilms) {
        i_class_far_fa_eye.setAttribute('class', 'far fa-eye pr-2');
        p_class_font_weight.appendChild(i_class_far_fa_eye);
 
-       var txt_p_class_font = document.createTextNode('3456');
+       var txt_p_class_font = document.createTextNode(news.nbr_vues);
        p_class_font_weight.appendChild(txt_p_class_font);
 
        var p_class_font_weight_2 = document.createElement('p');
@@ -191,20 +181,11 @@ function afficherEvent(tableauDeFilms) {
       div_class_rounded_bottom_2.setAttribute('class', 'rounded-bottom btn-elegant lighten-3 text-center pt-3');
       balise_footer_2.appendChild(div_class_rounded_bottom_2);
 
-      ul_class_list_unstyled = document.createElement('ul');
+      var ul_class_list_unstyled = document.createElement('ul');
       ul_class_list_unstyled.setAttribute('class', 'list-unstyled list-inline font-small');
       div_class_rounded_bottom_2.appendChild(ul_class_list_unstyled);
 
-      var li_class_list_inline_item = document.createElement('li');
-      li_class_list_inline_item.setAttribute('class', 'list-inline-item pr-2 white-text');
-      ul_class_list_unstyled.appendChild(li_class_list_inline_item);
-
-      var li_class_far_fa_clock = document.createElement('li');
-      li_class_far_fa_clock.setAttribute('class', 'far fa-clock pr-1');
-      li_class_list_inline_item.appendChild(li_class_far_fa_clock);
-
-      var date_article = document.createTextNode(news.date_sortie);
-      li_class_list_inline_item.appendChild(date_article);
+     
 
       var li_class_list_inline_item_2 = document.createElement('li');
       li_class_list_inline_item_2.setAttribute('class', 'list-inline-item');
@@ -232,7 +213,7 @@ function afficherEvent(tableauDeFilms) {
       li_class_list_inline_item_3.appendChild(a_into_li_item_3);
 
       var li_class_fab_fa_facebook = document.createElement('li');
-      li_class_fab_fa_facebook.setAttribute('class', 'fab fa-facebook-f pr-1');
+      li_class_fab_fa_facebook.setAttribute('class', 'fas fa-video pr-1');
       a_into_li_item_3.appendChild(li_class_fab_fa_facebook);
 
       txt_into_a_2 = document.createTextNode('21');
@@ -248,7 +229,7 @@ function afficherEvent(tableauDeFilms) {
       li_class_list_inline_item_4.appendChild(a_into_item_4);
 
       var i_class_fab_fa_twitter = document.createElement('li');
-      i_class_fab_fa_twitter.setAttribute('class', 'fab fa-twitter pr-1');
+      i_class_fab_fa_twitter.setAttribute('class', 'fas fa-camera pr-1');
       a_into_item_4.appendChild(i_class_fab_fa_twitter);
 
       var txt_into_a_4 = document.createTextNode('5');
