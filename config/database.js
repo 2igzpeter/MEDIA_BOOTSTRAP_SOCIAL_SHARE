@@ -1,8 +1,8 @@
 module.exports = {
  'connection':{
   'host':'localhost',
-  'user':'peter',
-  'password':'protekyanek'
+  'user':'admin',
+  'password':'password'
  },
  'database':'nodejs_login',
  'user_table':'users',

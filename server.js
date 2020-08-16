@@ -88,8 +88,8 @@ require('./app/routes.js')(app, passport, url);
 /////////////////////////////////////////////////////////////////////////
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "peter",
-  password: "protekyanek",
+  user: "admin",
+  password: "password",
   database: "nodejs_login"
  });
 ////////////////////////////////////////////////////////////////////////////
